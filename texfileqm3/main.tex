@@ -1,4 +1,3 @@
-%!TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
 \documentclass{report}
 \usepackage[utf8]{vietnam}
 \usepackage[utf8]{inputenc}
@@ -15,7 +14,6 @@
 \usepackage{graphicx}
 %\usepackage{tikz-feynman}
 \usepackage{nccmath}
-\usepackage{minted}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amsmath,systeme,bbold}
@@ -182,262 +180,336 @@ Vùng (3)
 	\Rightarrow & u'' + k^2u =0                                       \\
 	\Rightarrow & u(\mathbf{r})=Ce^{i\mathbf{kr}} +De^{-i\mathbf{kr}}
 \end{align*}
-Do vùng (3) là vùng ở xa, nên hạt không bật lại $\Rightarrow D = 0 $$\Rightarrow u(\mathbf{r})=Ce^{i\mathbf{kr}}$. \\
-Tại vùng r $\gg$,nên:
-	\begin{align*}
-		R(r) \sim \frac{e^{i\mathbf{kr}}}{\mathbf{r}}
-	\end{align*}
-	Vùng (2): vùng trung gian, $V=0$
-	\begin{align*}
-		u'' - \frac{\l(\l+1)}{r^2}u = -k^2u \\
-		\Rightarrow u(r) = Arj_{\l}(kr)+  Brn_{\l}(kr)
-	\end{align*}
-	Nghiện của nó chính là tổ hợp tuyến tính của hàm cầu Bessel.\\
-	Khái niệm mới: Hàm Hankel cầu:
-	\begin{align}
-		h_{\l}^{(1)}(r) \equiv j_{\l}(r) + in_{\l}(r); \quad h_{\l}^{(1)}(r) \equiv j_{\l}(r) - in_{\l}(r)
-	\end{align}\label{eq1.3}
-	với $r \gg$ thì 2 hàm trên tương đương với $\dfrac{e^{i\mathbf{kr}}}{r}$ và $\dfrac{e^{-i\mathbf{kr}}}{r}$. $R(r)\sim h_{\l}^{(1)}(kr)$\\
-$\ast$Vùng V = 0
-	\begin{align*}
-		\psi(r,\theta,\phi) = A \left[e^{i\mathbf{kz}} + \sum_{l,m}C_{l,m} h_l^{(1)}(kr) Y_l^m(\theta,\phi)  \right]
-	\end{align*}
-	Số hạng thứ nhất là của sóng tới, và phần tổng chính là của sóng tán xạ. Nhưng khi chúng ta giả định rằng, thế năng là đối xứng cầu, nên hàm sóng không phụ thuộc vào $\phi$. Vậy nên chỉ còn số hạng $m=0$ là còn tồn tại.
-	\begin{align*}
-		Y_{\l}^0 (\theta,\phi) = \sqrt{\frac{2\l+1}{4\pi}}P_{\l}(\cos\theta)
-	\end{align*}
-	Vậy nên hàm sóng đơn giản thành:
-	\begin{align*}
-		\psi(r,\theta)_{(2)} = A \left[e^{i\mathbf{kz}} + k\sum_{l=0}^{\infty}i^{\l+1}(2\l+1)a_{\l} h_{\l}^{(1)}(kr) P_{\l}(\cos\theta)\right]
-	\end{align*}
-	trong đó $a_l$ còn được gọi là biên độ sóng riêng phần thứ $\l$, kí hiệu $\psi(r,\theta)_{(2)}$ cho biết hàm sóng ở vùng số (2)
+Do vùng (3) là vùng ở xa, nên hạt không bật lại $\Rightarrow D = 0 $$\Rightarrow u(\mathbf{r})=Ce^{i\mathbf{kr}}$.\\
+			Tại vùng r $\gg$,nên:
+			\begin{align*}
+				R(r) \sim \frac{e^{i\mathbf{kr}}}{\mathbf{r}}
+			\end{align*}
+			Vùng (2): vùng trung gian, $V=0$
+			\begin{align*}
+				u'' - \frac{\l(\l+1)}{r^2}u = -k^2u \\
+				\Rightarrow u(r) = Arj_{\l}(kr)+  Brn_{\l}(kr)
+			\end{align*}
+			Nghiện của nó chính là tổ hợp tuyến tính của hàm cầu Bessel.\\
+			Khái niệm mới: Hàm Hankel cầu:
+			\begin{align}
+				h_{\l}^{(1)}(r) \equiv j_{\l}(r) + in_{\l}(r); \quad h_{\l}^{(1)}(r) \equiv j_{\l}(r) - in_{\l}(r)
+			\end{align}\label{eq1.3}
+			với $r \gg$ thì 2 hàm trên tương đương với $\dfrac{e^{i\mathbf{kr}}}{r}$ và $\dfrac{e^{-i\mathbf{kr}}}{r}$. $R(r)\sim h_{\l}^{(1)}(kr)$\\
+		$\ast$Vùng V = 0
+			\begin{align*}
+				\psi(r,\theta,\phi) = A \left[e^{i\mathbf{kz}} + \sum_{l,m}C_{l,m} h_l^{(1)}(kr) Y_l^m(\theta,\phi)  \right]
+			\end{align*}
+			Số hạng thứ nhất là của sóng tới, và phần tổng chính là của sóng tán xạ. Nhưng khi chúng ta giả định rằng, thế năng là đối xứng cầu, nên hàm sóng không phụ thuộc vào $\phi$. Vậy nên chỉ còn số hạng $m=0$ là còn tồn tại.
+			\begin{align*}
+				Y_{\l}^0 (\theta,\phi) = \sqrt{\frac{2\l+1}{4\pi}}P_{\l}(\cos\theta)
+			\end{align*}
+			Vậy nên hàm sóng đơn giản thành:
+			\begin{align*}
+				\psi(r,\theta)_{(2)} = A \left[e^{i\mathbf{kz}} + k\sum_{l=0}^{\infty}i^{\l+1}(2\l+1)a_{\l} h_{\l}^{(1)}(kr) P_{\l}(\cos\theta)\right]
+			\end{align*}
+			trong đó $a_l$ còn được gọi là biên độ sóng riêng phần thứ $\l$, kí hiệu $\psi(r,\theta)_{(2)}$ cho biết hàm sóng ở vùng số (2)
 
-	Quay lại vùng (3), hàm Hankel trở thành:
-	\begin{align*}
-		h_{\l}^{(1)}(kr) \rightarrow (-i)^{\l+1}\frac{e^{ikr}}{kr}
-	\end{align*}
-	và hàm sóng:
-	\begin{align*}
-		\psi(r,\theta) \approx A \left[e^{ikz}+ f(\theta)\frac{e^{ikr}}{r}\right]
-	\end{align*}
-	trong đó:
-	\begin{align*}
-		f(\theta) & = \sum_{\l=0}^{\infty}(2\l+1)a_{\l} P_{\l}(\cos\theta)                                                               \\
-		D(\theta) & = \abs{f(\theta)}^2                                                                                                  \\
-		          & = \sum_{\l\l'}^{}(2\l+1)(2\l'+1) a^{\ast}_{\l} a_{\l'} + P_{\l}(\cos\theta) P^{*}_{\l}(\cos\theta)                   \\
-		\sigma    & =    \int_{}D(\theta)\sin\theta d\theta d\phi                                                                        \\
-		          & = \sum_{\l,\l'}^{}(2\l+1)(2\l'+1)a^{\ast}_{\l}a_{\l} 2\pi\int P_{\l}^{\ast}(\cos\theta)   P_{\l}(\cos\theta) d\theta \\
-		          & = 4\pi \sum_{\l}(2\l+1)\abs{a_\l}^2
-	\end{align*}
-	Do tính trực giao của hàm Legendre, nên tích phân sẽ thành là $\dfrac{2}{2\l+1}\delta_{\l\l'}$\\
-	Quả cầu , ta có điều kiện biên và nhờ vào hệ thức Rayleigh
-	\begin{align*}
-		V & = \infty; \quad r<R \\
-		  & = 0; \quad r>R      \\
-		  & \psi(r=R) = 0
-	\end{align*}
+			Quay lại vùng (3), hàm Hankel trở thành:
+			\begin{align*}
+				h_{\l}^{(1)}(kr) \rightarrow (-i)^{\l+1}\frac{e^{ikr}}{kr}
+			\end{align*}
+			và hàm sóng:
+			\begin{align*}
+				\psi(r,\theta) \approx A \left[e^{ikz}+ f(\theta)\frac{e^{ikr}}{r}\right]
+			\end{align*}
+			trong đó:
+			\begin{align*}
+				f(\theta) & = \sum_{\l=0}^{\infty}(2\l+1)a_{\l} P_{\l}(\cos\theta)                                                               \\
+				D(\theta) & = \abs{f(\theta)}^2                                                                                                  \\
+				          & = \sum_{\l\l'}^{}(2\l+1)(2\l'+1) a^{\ast}_{\l} a_{\l'} + P_{\l}(\cos\theta) P^{*}_{\l}(\cos\theta)                   \\
+				\sigma    & =    \int_{}D(\theta)\sin\theta d\theta d\phi                                                                        \\
+				          & = \sum_{\l,\l'}^{}(2\l+1)(2\l'+1)a^{\ast}_{\l}a_{\l} 2\pi\int P_{\l}^{\ast}(\cos\theta)   P_{\l}(\cos\theta) d\theta \\
+				          & = 4\pi \sum_{\l}(2\l+1)\abs{a_\l}^2
+			\end{align*}
+			Do tính trực giao của hàm Legendre, nên tích phân sẽ thành là $\dfrac{2}{2\l+1}\delta_{\l\l'}$\\
+			Quả cầu , ta có điều kiện biên và nhờ vào hệ thức Rayleigh
+			\begin{align*}
+				V & = \infty; \quad r<R \\
+				  & = 0; \quad r>R      \\
+				  & \psi(r=R) = 0
+			\end{align*}
 
-	\textbf{Rayleigh’s formula *}
+			\textbf{Rayleigh’s formula *}
 
-	\begin{align}
-		e^{ikz}            & = \sum_{\l=0}^{\infty}i^{\l}(2\l+1)j_{\l} (kr) P_{\l}(\cos\theta) *                                    \\
-		\Rightarrow \psi_2 & = A\sum_{\l=0}^{\infty}i^{\l}(2\l+1)P_{\l}(\cos\theta)\left[ j_{\l} (kr)+ika_{\l}h^{1}(kr) \right] = 0 \label{eq1.5} \\
-		\Rightarrow a_{\l} & = i\dfrac{j_{\l}(kR)}{k h^{(1)}_{\l}(kR)}\nonumber
-	\end{align}
+			\begin{align}
+				e^{ikz}            & = \sum_{\l=0}^{\infty}i^{\l}(2\l+1)j_{\l} (kr) P_{\l}(\cos\theta) *                                                  \\
+				\Rightarrow \psi_2 & = A\sum_{\l=0}^{\infty}i^{\l}(2\l+1)P_{\l}(\cos\theta)\left[ j_{\l} (kr)+ika_{\l}h^{1}(kr) \right] = 0 \label{eq1.5} \\
+				\Rightarrow a_{\l} & = i\dfrac{j_{\l}(kR)}{k h^{(1)}_{\l}(kR)}\nonumber
+			\end{align}
 
-	Tiết diện toán xạ toàn phần
-	\begin{align*}
-		\sigma = \dfrac{4\pi}{k^2}\sum_{\l}(2\l+1) \abs{\dfrac{j_{\l}(kR)}{h^{(1)}_{\l}(kR)}}^2
-	\end{align*}
-	Nhưng chúng ta đang giả sử rằng ở gần đúng bước sóng dài $kR\ll 1$ nên ta có được:
-	\begin{align*}
-		\sigma = 4\pi R^2 \quad \Rightarrow\text{Đặc trưng của tán xạ bước sóng dài}
-	\end{align*}
+			Tiết diện toán xạ toàn phần
+			\begin{align*}
+				\sigma = \dfrac{4\pi}{k^2}\sum_{\l}(2\l+1) \abs{\dfrac{j_{\l}(kR)}{h^{(1)}_{\l}(kR)}}^2
+			\end{align*}
+			Nhưng chúng ta đang giả sử rằng ở gần đúng bước sóng dài $kR\ll 1$ nên ta có được:
+			\begin{align*}
+				\sigma = 4\pi R^2 \quad \Rightarrow\text{Đặc trưng của tán xạ bước sóng dài}
+			\end{align*}
 
-	\newpage
+			\newpage
 
-	\section{Dịch chuyển pha}
-	
-	Hàm sóng tổng quát được khai triển dưới dạng: $\sum_{\l=0} a_{\l}...$ trong đó $a_{\l}$ là phức.
+			\section{Dịch chuyển pha}
 
-	\textbf{Xét trường hợp 1D:}
-	\image{phaseshift01.png}
-	Để bảo toàn số hạt:
-	\begin{align*}
-		\abs{A}^2        & = \abs{B}^2                                          \\
-		B                & = \pm A e^{i\delta}\rightarrow \; \text{thừa số pha} \\
-		\text{hoặc} \; B & = \pm A e^{2i\delta}
-	\end{align*}
-	Nếu như không có vùng ``line''(đồng nghĩa là chỉ có một tường chắn tại $x=0$) thì đơn giản là $B = - A$ và hàm sóng là:
-	\begin{align*}
-		\psi(x) = A (e^{ikx} - e^{-ikx}) \quad \quad ( V (x) = 0).
-	\end{align*}
-	Với $V(x) \neq 0$, hàm sóng cho $(x<-a)$:
-	\begin{align*}
-		\psi(x) = A (e^{ikx} - e^{-ikx} e^{i2\delta}) \quad \quad ( V (x) \neq 0).
-	\end{align*}
-	Thừa số pha xảy ra khi giải phương trình Schr\"{o}dinger tại vùng tán xạ ($-a<x<0$). Sóng tới và sóng phản xạ có thêm phần dịch chuyển pha, tâm tán xạ có nhiệm vụ làm cho pha của hàm sóng bị dịch chuyển pha.
+			Hàm sóng tổng quát được khai triển dưới dạng: $\sum_{\l=0} a_{\l}...$ trong đó $a_{\l}$ là phức.
 
-	\textbf{Xét trường hợp 3D:}\\
-	Sóng tới lan truyền theo trục $z$ ($Ae^{ikz}$) không chứa thành phần. Bằng cách áp dụng công thức Rayleigh, ta khai triển sóng tới theo tổ hợp của các sóng cầu:
-	\begin{align}
-		\psi_{\l}(r) = A\,i^{\l}\,(2\l+1)\,j_{\l} (kr)P_{\l} (\cos\theta) \quad \quad (V(r) = 0).
-	\end{align}
-	Nhưng từ \hyperref[eq1.3]{(1.3)}:
-	\begin{align}
-		j_{\l}(x) = \f{1}{2} \left[ h_{\l}^{(1)}(x) + h_{\l}^{(1)}(x)  \right] \overset{x\gg1}{\longrightarrow}\; \approx \f{1}{2x}\left[ (-i)^{\l+1}e^{ix} + (i)^{\l+1}e^{-ix} \right]
-	\end{align}\label{eq1.7}
-	Vậy, với $r\gg$$\rightarrow$\hyperref[eq1.7]{(1.7)}
+			\textbf{Xét trường hợp 1D:}
+			\image{phaseshift01.png}
+			Để bảo toàn số hạt:
+			\begin{align*}
+				\abs{A}^2        & = \abs{B}^2                                          \\
+				B                & = \pm A e^{i\delta}\rightarrow \; \text{thừa số pha} \\
+				\text{hoặc} \; B & = \pm A e^{2i\delta}
+			\end{align*}
+			Nếu như không có vùng ``line''(đồng nghĩa là chỉ có một tường chắn tại $x=0$) thì đơn giản là $B = - A$ và hàm sóng là:
+			\begin{align*}
+				\psi(x) = A (e^{ikx} - e^{-ikx}) \quad \quad ( V (x) = 0).
+			\end{align*}
+			Với $V(x) \neq 0$, hàm sóng cho $(x<-a)$:
+			\begin{align*}
+				\psi(x) = A (e^{ikx} - e^{-ikx} e^{i2\delta}) \quad \quad ( V (x) \neq 0).
+			\end{align*}
+			Thừa số pha xảy ra khi giải phương trình Schr\"{o}dinger tại vùng tán xạ ($-a<x<0$). Sóng tới và sóng phản xạ có thêm phần dịch chuyển pha, tâm tán xạ có nhiệm vụ làm cho pha của hàm sóng bị dịch chuyển pha.
+
+			\textbf{Xét trường hợp 3D:}\\
+			Sóng tới lan truyền theo trục $z$ ($Ae^{ikz}$) không chứa thành phần. Bằng cách áp dụng công thức Rayleigh, ta khai triển sóng tới theo tổ hợp của các sóng cầu:
+			\begin{align}
+				\psi_{\l}(r) = A\,i^{\l}\,(2\l+1)\,j_{\l} (kr)P_{\l} (\cos\theta) \quad \quad (V(r) = 0).
+			\end{align}
+			Nhưng từ \hyperref[eq1.3]{(1.3)}:
+			\begin{align}
+				j_{\l}(x) = \f{1}{2} \left[ h_{\l}^{(1)}(x) + h_{\l}^{(1)}(x)  \right] \overset{x\gg1}{\longrightarrow}\; \approx \f{1}{2x}\left[ (-i)^{\l+1}e^{ix} + (i)^{\l+1}e^{-ix} \right]
+			\end{align}\label{eq1.7}
+			Vậy, với $r\gg$$\rightarrow$\hyperref[eq1.7]{(1.7)}
+		\begin{align}
+			\psi & = Ai^{\l} (2\l+1) \f{1}{2kr}\left[(-i)^{\l+1} e^{ikr} +i^{\l+1}e^{-ikr} \right]P_{\l}(\cos\theta)\nonumber \\
+			\psi & = \f{A(2\l + 1)}{2ikr}\left[e^{ikr} - e^{-ikr}(-1)^{\l} \right]P_{\l}(\cos\theta) \quad \quad (V(r) = 0)
+		\end{align}
+		Số hạng thứ hai nằm trong $[\quad]$ đại diện cho sóng cầu tới, nó đến từ sóng phẳng tới, và không đổi cho tới khi đưa một thế mới vào.
+		\begin{align}
+			\psi_{\l}(r) = \f{A(2\l + 1)}{2ikr}\left[e^{i(kr+2\delta_{\l})} - e^{-ikr}(-1)^{\l} \right]P_{\l}(\cos\theta) \quad \quad (V(r) \neq 0)
+		\end{align}
+
+		Từ phương trình sóng trong công thức Rayleigh (\hyperref[eq1.5]{1.5}):
+		\begin{align*}
+			\psi_{\l}(r) = A\sum_{\l=0}^{\infty}i^{\l}(2\l+1)P_{\l}(\cos\theta)\left[ j_{\l} (kr)+ika_{\l}h^{1}(kr) \right] = 0
+		\end{align*}
+		với $r\gg1$
+		\begin{align*}
+			\psi_{\l}(r) = \f{A(2\l+1)}{i2kr}\left[e^{ikr} - i^{\l} e^{-ikr} \right] P_{\l}(\cos\theta) + A i^{\l}ka_{\l}\f{1}{kr}(-i)^{2\l+1}e^{ikr}P_{\l}(\cos\theta)(2\l+1)
+		\end{align*}
+		\begin{align}
+			\Rightarrow a_{\l} = \f{e^{2i\delta_{\l}}}{2ik} = \f{1}{k}e^{i\delta_{\l}}\sin\delta_{\l}
+		\end{align}
+		Ráp vô $f(\theta)  = \sum_{\l=0}^{\infty}(2\l+1)a_{\l} P_{\l}(\cos\theta)$
+		\begin{align}
+			f(\theta) & = \f{1}{k} \sum_{\l = 0}^{\infty}(2\l + 1)e^{i\delta_{\l}}\sin\delta_{\l} P_{\l}\cos\theta \\
+			\sigma    & = \f{4\pi}{k^2} \sum_{\l = 0}^{\infty}(2\l + 1)e^{i\delta_{\l}}\sin^{2}\delta_{\l}
+		\end{align}
+
+		\textbf{Bài tập}
+		\image{prob10_5.png}
+		Giải:\\
+	$\ast$Tại $V(x) = 0$, hàm sóng cho vùng này là:
+		\begin{align*}
+			\psi(x) = A e^{ikx} + B e^{-ikx}
+		\end{align*}
+	$\ast$Tại $V(x) = -V_0$, phương trình Schr\"{o}dinger cho vùng này là:
+		\begin{align*}
+			-\f{\hbar^2}{2m}\f{d^2\psi}{dx^2} - V_0 \psi = E\psi \Rightarrow \f{d^2\psi}{dx^2} = -(k')^2\psi
+		\end{align*}
+		Hàm sóng cho vùng này là:
+		\begin{align*}
+			\psi(x) = C \sin(k'x) + D\cos(k'x),
+		\end{align*}
+	$\psi (0) = \psi (-a) = 0$ nên $D = 0$:
+		\begin{align*}
+			\psi(x) = C \sin(k'x)
+		\end{align*}
+		Điều kiện liên tục cho $\psi(x)$ và $\f{d}{dx}\psi(x)$ tại $x= - a$
+		\begin{align*}
+			A e^{-ika} + B e^{ika}        & = C \sin(-k'a)   \\
+			ik A e^{-ika} -  ik B e^{ika} & = k' C \sin(k'a)
+		\end{align*}
+	$\Rightarrow B = $
+
+		\section{Gần đúng Born}
+		Phương trình Schr\"{o}dinger:
+		\begin{align}
+			\f{-\hbar^2}{2m} \nabla^2\psi + V\psi = E\psi \quad \quad E > 0
+		\end{align}
+		Viết lại dưới dạng phương trình Hemholtz(phương trình đạo hàm riêng không thuần nhất):
+		\begin{align}
+			(\nabla^2 + k ^2 ) \psi =\mathcal{Q}
+		\end{align}\label{eq1.14}
+		\textbf{Phương pháp hàm riêng}
+		\begin{align}
+			(\nabla^2+k^2) G(\mathbf{r}) = \delta^3(\mathbf{r}), \quad \quad \delta^3(\mathbf{r}) = \delta(x) \delta(y) \delta(z)
+		\end{align}
+		Hàm $G(\mathbf{r})$ là $\notin V$,
+		\begin{align}
+			 & \psi(\mathbf{r}) = \int G(\mathbf{r - r_0}) \mathcal{Q}(\mathbf{r_0}) d\mathbf{r_0} \nonumber                                                                           \\
+			 & \Rightarrow (\nabla^2 + k^2) \psi(\mathbf{r}) = \int \left[(\nabla^2 + k^2) G(\mathbf{r-r_0}) \right] \mathcal{Q}(\mathbf{r_0}) d\mathbf{r_0} = \mathcal{Q}(\mathbf{r})
+		\end{align}
+		\textbf{Hàm Green của phương trình Hemholtz}\\
+		Khai triển Fourier, ta tìm ảnh của hàm Green(HG):
+		\begin{align}
+			\begin{cases}
+				G(\mathbf{r})        & = \f{1}{(2\pi)^{\frac{3}{2}}} \dps\int e ^{i\mathbf{s \cdot r}} g(\mathbf{s}) d\mathbf{s} \\
+				\delta^3(\mathbf{r}) & = \f{1}{(2\pi)^{3}} \dps\int e ^{i\mathbf{s \cdot r}} d\mathbf{s}                         \\
+			\end{cases}
+		\end{align}
+		Thế vô \hyperref[eq1.14]{(1.14)}:
+		\begin{align}
+			\f{1}{(2\pi)^{\frac{3}{2}}}\int (-s^2 + k^2) e^{i\mathbf{s\cdot r}}g(\mathbf{s}) d\mathbf{s} = \f{1}{(2\pi^3)}\int e^{i\mathbf{s\cdot r}} d\mathbf{s}.
+		\end{align}
+		Dẫn ra được ảnh của HG:
+		\begin{align}
+			g(\mathbf{s}) = \f{1}{\sqrt{2\pi}(k^2 - s^2)} \Rightarrow G(\mathbf{r}) = \f{1}{(2\pi)^3} \int \f{e^{i\mathbf{s\cdot r}}}{k^2 - s^2} d\mathbf{s}
+		\end{align}
+
+		Chọn $r$ cố định $\rightarrow$ chọn trục $z$ để thuận tiện trong việc tính toán ($z$ theo $r$)
+		\image{coords}
+		\begin{align}
+			\begin{cases}
+				\mathbf{s \cdot r} & = sr\cos\theta                       \\
+				d\mathbf{s}        & = s^2ds \sin\theta d\theta d\dps\phi \\
+				\dps\int d\phi     & = 2\pi
+			\end{cases}
+		\end{align}
+		Tích phân theo $d\theta$:
+		\begin{align}
+			\int_{0}^{\pi} = e^{i\mathbf{s\cdot r}} \sin\theta d\theta & = - \f{e^{isr\cos\theta}}{isr} \at{0}{\pi} \nonumber \\
+			                                                           & = \f{e^{isr} - e^{-isr}}{isr}
+		\end{align}
+		Do đó HG có dạng:
+		\begin{align}
+			G(\mathbf{r}) & = \f{2\pi}{(2\pi)^3} \int_{0}^{\pi} \f{s^2}{k^2 - s^2} \f{e^{isr} - e^{-isr}}{isr} \nonumber                                          \\
+			              & = \f{i}{8\pi^2r}\left[ \int_{-\infty}^{\infty} \f{se^{isr}}{k^2 - s^2}ds - \int_{-\infty}^{\infty} \f{se^{-isr}}{k^2 - s^2}ds \right] \\
+			              & = \f{i}{8\pi^2r} \left[I_1 + I_2\right]
+		\end{align}
+		\image{contour
+		}
+		Ta chọn contour cho $I_1$ là:
+		\image{countour1}
+		để tránh cho $e^{isr}$ tiến ra vô cùng thì $k$ phải là số dương $\gg$
+		\begin{align*}
+			I = i\pi e^{ikr}
+		\end{align*}
+		và chọn cho $I_2$ là countour đóng dưới, với k phải là số âm $\gg$:
+		\begin{align*}
+			I_2 = -i\pi e^{ikr}
+		\end{align*}
+		Vậy hàm Green sẽ có dạng là:
+		\begin{align}
+			G(\mathbf{r}) = - \f{e^{ikr}}{4\pi r}.
+		\end{align}\label{eq1.24}
+
+		Nghiệm riêng của hàm sóng:
+		\begin{align}
+			\psi_p = \int -\f{e^{ik\mathbf{r}}}{4\pi\mathbf{r}} = \int - \f{e^{ik\abs{\mathbf{r - r_0}}}}{4\pi \abs{\mathbf{r - r_0}}} \f{2m}{\hbar} V(\mathbf{r_0}) \psi(\mathbf{r_0}) d\mathbf{r_0}
+		\end{align}
+		Nghiệm tổng quát:
+		\begin{align}
+			\psi(\mathbf{r}) & = \psi_0(\mathbf{r}) + \psi_p \nonumber                                         \\
+			                 & = \psi_0 + \int gV\psi = \psi_0 + \left(  \int gV(\psi_0 + \int gV\psi) \right)
+		\end{align}
+		Đây chính là gần đúng Born bậc 1, trong đó $g$ chính là ảnh của hàm Green, và $g$ phải nhỏ.
+
+		Buổi 3: Lý thuyết tán xạ (continue)
+		\section{Gần đúng Born bậc 1}
+		Bắt đầu bằng với hàm Green \hyperref[eq1.24]{(1.24)} và hàm sóng :
+		\begin{align*}
+			G(\mathbf{r})    & = - \f{e^{ikr}}{4\pi r},                                                                                                                                                     \\
+			\psi(\mathbf{r}) & = \psi_0(\mathbf{r}) + \int -\f{m}{2\pi\hbar} \f{e^{ik\abs{\mathbf{r} - \mathbf{r}_0 } } }{\abs{\mathbf{r} - \mathbf{r}_0}} V(\mathbf{r}_0) \psi(\mathbf{r}_0) d\mathbf{r}_0
+		\end{align*}
+		trong đó:
+		\begin{itemize}
+			\item $\psi_0(\mathbf{r})$ là nghiệm của phương trình Schr\"{o}dinger của hạt tự do.
+			\item $\psi(\mathbf{r}_0)$ là nghiệm đúng (chưa gần đúng).
+		\end{itemize}
+
+		Xét gần đúng Born bậc 1:
+		\begin{align}
+			\psi(\mathbf{r}) & = \psi_0(\mathbf{r}) + \int -\f{m}{2\pi\hbar} \f{e^{ik\abs{\mathbf{r} - \mathbf{r}_0 } } }{\abs{\mathbf{r} - \mathbf{r}_0}} V(\mathbf{r}_0) \psi_0(\mathbf{r}_0) d\mathbf{r}_0.
+		\end{align}
+	${V(\mathbf{r}_0)}$ định xứ quanh $\mathbf{r}_0 = 0$
+		\begin{align}
+			\abs{\mathbf{r}} \gg  \abs{\mathbf{r}_0} \rightarrow \abs{\mathbf{r} - \mathbf{r}_0 } \approx r - \f{\mathbf{r} \cdot \mathbf{r}_0 }{r} \approx r - \hat{r} \cdot \mathbf{r}_0,
+		\end{align}
+		\begin{align}
+			\Rightarrow \f{e^{ik\abs{\mathbf{r} - \mathbf{r}_0 } } }{\abs{\mathbf{r} - \mathbf{r}_0}} \approx \f{e^{ikr}}{r} e^{-i\mathbf{k\cdot}\mathbf{r}_0 },
+		\end{align}
+		trong đó $\hat{r} \equiv \f{\mathbf{r}}{r}$, $\mathbf{k} = k \hat{r}$
+
+		Trong trường hợp tán xạ, chúng ta muốn:
+		\begin{align}
+			\psi-0(\mathbf{r}) = A e^{ikz},
+		\end{align}
+		là cho trường hợp sóng tới.\\
+		Biên độ tán xạ $f(\theta)$:
 \begin{align}
-	\psi & = Ai^{\l} (2\l+1) \f{1}{2kr}\left[(-i)^{\l+1} e^{ikr} +i^{\l+1}e^{-ikr} \right]P_{\l}(\cos\theta)\nonumber\\
-	\psi & = \f{A(2\l + 1)}{2ikr}\left[e^{ikr} - e^{-ikr}(-1)^{\l} \right]P_{\l}(\cos\theta) \quad \quad (V(r) = 0)
+	&
+	\begin{cases*}
+		\psi(\mathbf{r})  = A \left[ e^{ikz} - \f{m}{2\pi \hbar^2 A} \f{e^{ikr}}{r} \dps\int e^{-i \mathbf{k\cdot}\mathbf{r}_0} V(\mathbf{r}_0) \psi_0(\mathbf{r}_0)    \right] \\
+		\psi(\mathbf{r})  = A\left(e^{ikz} + f(\theta) \f{e(ikr)}{r}\right)
+	\end{cases*}\nonumber\\
+	&\Rightarrow f(\theta)  = -\f{m}{2\pi \hbar^2A} \int e^{-i \mathbf{k\cdot}\mathbf{r}_0} V(\mathbf{r}_0) \psi_0(\mathbf{r}_0) d\mathbf{r}_0,
 \end{align}
-Số hạng thứ hai nằm trong $[\quad]$ đại diện cho sóng cầu tới, nó đến từ sóng phẳng tới, và không đổi cho tới khi đưa một thế mới vào.
+Đưa gần đúng Born vô thì:
 \begin{align}
-	\psi_{\l}(r) = \f{A(2\l + 1)}{2ikr}\left[e^{i(kr+2\delta_{\l})} - e^{-ikr}(-1)^{\l} \right]P_{\l}(\cos\theta) \quad \quad (V(r) \neq 0)
+	\psi(\mathbf{r}_0) \approx \psi_0 \mathbf{r}_0 = A e^{i\mathbf{k'}\cdot \mathbf{r}_0}d\mathbf{r}_0,
+\end{align}
+với $\mathbf{k'} \equiv k \hat{z} $. Nên biên độ tán xạ sẽ có dạng:
+\begin{align}
+	f(\theta) = -\f{m}{2\pi \hbar^2 } \int e^{-i (\mathbf{k} - \mathbf{k'}) \cdot \mathbf{r}_0} V(\mathbf{r}_0) \psi_0(\mathbf{r}_0)
+\end{align}\label{eq1.33}
+$f(\theta)$ là ảnh Fourier của thế tán xạ.
+\image{wave_vector_born.png}
+
+\boldsymbol{$\kappa$} = $\sqrt{2k^2 - 2k\cos \theta} = 2k\sin\theta$
+
+\textbf{$\star$ Gần đúng năng lượng thấp}($\boldsymbol{\kappa} \approx 0$)\\
+Biên độ tán xạ:
+\begin{align}
+	f(\theta,\phi) = -\f{m}{2\pi \hbar^2} V(\mathbf{r}_0) d\mathbf{r}_0
 \end{align}
 
-Từ phương trình sóng trong công thức Rayleigh (\hyperref[eq1.5]{1.5}):
+\textbf{$\star$Quả cầu mềm}\\
+Biên độ tán xạ:
+\begin{align}
+	f(\theta,\phi) = -\f{m}{2\pi \hbar^2 } V_0 \f{4}{3}\pi a^3
+\end{align}
+
+\textbf{$\star$$\mathbf{r}$ chỉ phụ thuộc vào khoảng cách, không phụ thuộc vào hướng}
 \begin{align*}
-	\psi_{\l}(r) = A\sum_{\l=0}^{\infty}i^{\l}(2\l+1)P_{\l}(\cos\theta)\left[ j_{\l} (kr)+ika_{\l}h^{1}(kr) \right] = 0
+	V(\mathbf{r}) &= V(r) \\ 
+	\left(\mathbf{k'} - \mathbf{k} \right) \cdot \mathbf{r}_0  &= \boldsymbol{\kappa} \cdot \mathbf{r}_0 = \kappa r_0 \cos \theta_0
 \end{align*}
-với $r\gg1$
-\begin{align*}
-	\psi_{\l}(r) = \f{A(2\l+1)}{i2kr}\left[e^{ikr} - i^{\l} e^{-ikr} \right] P_{\l}(\cos\theta) + A i^{\l}ka_{\l}\f{1}{kr}(-i)^{2\l+1}e^{ikr}P_{\l}(\cos\theta)(2\l+1)
-\end{align*}
+Ta có thể tính lại phương trình \hyperref[eq1.33]{(1.33)} dưới 3 gần đúng  $\star$ cho trường hợp đối xứng cầu:
 \begin{align}
-	\Rightarrow a_{\l} = \f{e^{2i\delta_{\l}}}{2ik} = \f{1}{k}e^{i\delta_{\l}}\sin\delta_{\l}
+	f(\theta) &= -\f{m}{2\pi \hbar^2 } \int_0^\infty \int_0^\pi e^{ i\kappa r_0 \cos\theta_0 } V(r_0) r_0^2 \sin\theta_0 dr_0 d\theta_0 \int_0^{2\pi} d\phi_0\\
+	&= -\f{m}{2\pi \hbar^2 } \int_{0}^{\infty} rV(r) \sin(\kappa r) dr
 \end{align}
-Ráp vô $f(\theta)  = \sum_{\l=0}^{\infty}(2\l+1)a_{\l} P_{\l}(\cos\theta)$
+\section{Thế Yukawa}
+Cho:
 \begin{align}
-	f(\theta) &= \f{1}{k} \sum_{\l = 0}^{\infty}(2\l + 1)e^{i\delta_{\l}}\sin\delta_{\l} P_{\l}\cos\theta\\
-	\sigma &= \f{4\pi}{k^2} \sum_{\l = 0}^{\infty}(2\l + 1)e^{i\delta_{\l}}\sin^{2}\delta_{\l}
+	V(r) = \beta \f{e^{-\mu r}}{r},
 \end{align}
-
-\textbf{Bài tập}
-\image{prob10_5.png}
-Giải:\\
-$\ast$Tại $V(x) = 0$, hàm sóng cho vùng này là:
-\begin{align*}
-	\psi(x) = A e^{ikx} + B e^{-ikx}
-\end{align*}
-$\ast$Tại $V(x) = -V_0$, phương trình Schr\"{o}dinger cho vùng này là:
-\begin{align*}
-	-\f{\hbar^2}{2m}\f{d^2\psi}{dx^2} - V_0 \psi = E\psi \Rightarrow \f{d^2\psi}{dx^2} = -(k')^2\psi
-\end{align*}
-Hàm sóng cho vùng này là:
-\begin{align*}
-	\psi(x) = C \sin(k'x) + D\cos(k'x),
-\end{align*}
-$\psi (0) = \psi (-a) = 0$ nên $D = 0$:
-\begin{align*}
-	\psi(x) = C \sin(k'x)
-\end{align*}
-Điều kiện liên tục cho $\psi(x)$ và $\f{d}{dx}\psi(x)$ tại $x= - a$
-\begin{align*}
-	 A e^{-ika} + B e^{ika} & = C \sin(-k'a) \\ 
-	 ik A e^{-ika} -  ik B e^{ika} & = k' C \sin(k'a)
-\end{align*}
-$\Rightarrow B = $
-
-\section{Gần đúng Born}
-Phương trình Schr\"{o}dinger:
+$\beta,\mu$ là các hằng số. Ta có tính được biên độ tán xạ thông qua tích phân các bước làm như trên. Kết quả là:
 \begin{align}
-	\f{-\hbar^2}{2m} \nabla^2\psi + V\psi = E\psi \quad \quad E > 0 
+	f(\theta) = -\f{2m\beta}{\hbar^2\left(\mu^2 + \kappa^2\right)}
 \end{align}
-Viết lại dưới dạng phương trình Hemholtz(phương trình đạo hàm riêng không thuần nhất):
+\section{Thế Coulomb}(tán xạ Rutherford)\\
+Khi ta đặt $\beta = \f{q_1 q_2}{4\pi\epsilon_0},\mu = 0$, thế Yukawa trở thành thế Coulomb, nó mô tả tương tác giữa 2 điện tích điểm. Ta có thể tính được biên độ tán xạ:
 \begin{align}
-	(\nabla^2 + k ^2 ) \psi =\mathcal{Q}
-\end{align}\label{eq1.14}
-\textbf{Phương pháp hàm riêng}
-\begin{align}
-	(\nabla^2+k^2) G(\mathbf{r}) = \delta^3(\mathbf{r}), \quad \quad \delta^3(\mathbf{r}) = \delta(x) \delta(y) \delta(z)
+	f(\theta) \approx  -\f{2m\beta}{\hbar^2} \f{q_1 q_2}{4\pi\epsilon_0}\f{1}{\kappa^2}
 \end{align}
-Hàm $G(\mathbf{r})$ là $\notin V$,
-\begin{align}
-	&\psi(\mathbf{r}) = \int G(\mathbf{r - r_0}) \mathcal{Q}(\mathbf{r_0}) d\mathbf{r_0} \nonumber \\
-	&\Rightarrow (\nabla^2 + k^2) \psi(\mathbf{r}) = \int \left[(\nabla^2 + k^2) G(\mathbf{r-r_0}) \right] \mathcal{Q}(\mathbf{r_0}) d\mathbf{r_0} = \mathcal{Q}(\mathbf{r})
-\end{align}  
-\textbf{Hàm Green của phương trình Hemholtz}\\
-Khai triển Fourier, ta tìm ảnh của hàm Green(HG):
-\begin{align}
-	\begin{cases}
-		G(\mathbf{r}) &= \f{1}{(2\pi)^{\frac{3}{2}}} \dps\int e ^{i\mathbf{s \cdot r}} g(\mathbf{s}) d\mathbf{s} \\ 
-		\delta^3(\mathbf{r}) &= \f{1}{(2\pi)^{3}} \dps\int e ^{i\mathbf{s \cdot r}} d\mathbf{s} \\ 
-	\end{cases}
-\end{align}
-Thế vô \hyperref[eq1.14]{(1.14)}:
-\begin{align}
-	\f{1}{(2\pi)^{\frac{3}{2}}}\int (-s^2 + k^2) e^{i\mathbf{s\cdot r}}g(\mathbf{s}) d\mathbf{s} = \f{1}{(2\pi^3)}\int e^{i\mathbf{s\cdot r}} d\mathbf{s}. 
-\end{align}
-Dẫn ra được ảnh của HG:
-\begin{align}
-	g(\mathbf{s}) = \f{1}{\sqrt{2\pi}(k^2 - s^2)} \Rightarrow G(\mathbf{r}) = \f{1}{(2\pi)^3} \int \f{e^{i\mathbf{s\cdot r}}}{k^2 - s^2} d\mathbf{s}
-\end{align}
-
-Chọn $r$ cố định $\rightarrow$ chọn trục $z$ để thuận tiện trong việc tính toán ($z$ theo $r$)
-\image{coords}
-\begin{align}
-	\begin{cases}
-		\mathbf{s \cdot r} &= sr\cos\theta\\
-		d\mathbf{s} &= s^2ds \sin\theta d\theta d\dps\phi \\
-		\dps\int d\phi &= 2\pi
-	\end{cases}
-\end{align}
-Tích phân theo $d\theta$:
-\begin{align}
-	\int_{0}^{\pi} = e^{i\mathbf{s\cdot r}} \sin\theta d\theta &= - \f{e^{isr\cos\theta}}{isr} \at{0}{\pi} \nonumber \\ 
-	& = \f{e^{isr} - e^{-isr}}{isr} 
-\end{align}
-Do đó HG có dạng:
-\begin{align}
-	G(\mathbf{r}) &= \f{2\pi}{(2\pi)^3} \int_{0}^{\pi} \f{s^2}{k^2 - s^2} \f{e^{isr} - e^{-isr}}{isr} \nonumber \\ 
-	& = \f{i}{8\pi^2r}\left[ \int_{-\infty}^{\infty} \f{se^{isr}}{k^2 - s^2}ds - \int_{-\infty}^{\infty} \f{se^{-isr}}{k^2 - s^2}ds \right] \\
-	&= \f{i}{8\pi^2r} \left[I_1 + I_2\right]
-\end{align}
-\image{contour
-}
-Ta chọn contour cho $I_1$ là:
-\image{countour1}
-để tránh cho $e^{isr}$ tiến ra vô cùng thì $k$ phải là số dương $\gg$
-\begin{align*}
-	I = i\pi e^{ikr}
-\end{align*}
-và chọn cho $I_2$ là countour đóng dưới, với k phải là số âm $\gg$:
-\begin{align*}
-	I_2 = -i\pi e^{ikr}
-\end{align*}
-Vậy hàm Green sẽ có dạng là:
-\begin{align}
-	G(\mathbf{r}) = - \f{e^{ikr}}{4\pi r}.
-\end{align}
-
-Nghiệm riêng của hàm sóng:
-\begin{align}
-	\psi_p = \int -\f{e^{ik\mathbf{r}}}{4\pi\mathbf{r}} = \int - \f{e^{ik\abs{\mathbf{r - r_0}}}}{4\pi \abs{\mathbf{r - r_0}}} \f{2m}{\hbar} V(\mathbf{r_0}) \psi(\mathbf{r_0}) d\mathbf{r_0}
-\end{align}
-Nghiệm tổng quát:
-\begin{align}
-	\psi(\mathbf{r}) &= \psi_0(\mathbf{r}) + \psi_p \nonumber\\
-	&= \psi_0 + \int gV\psi = \psi_0 + \left(  \int gV(\psi_0 + \int gV\psi) \right)
-\end{align}
-Đây chính là gần đúng Born bậc 1, trong đó $g$ chính là ảnh của hàm Green, và $g$ phải nhỏ.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
