@@ -4,11 +4,11 @@
 \usepackage{anyfontsize,fontsize}
 \changefontsize[13pt]{13pt}
 \usepackage{commath}
-\usepackage{blindtext}
 \usepackage{parskip}
 \usepackage{xcolor}
 \usepackage{amssymb}
-\usepackage{slashed}
+\usepackage{slashed,cancel}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 \usepackage{indentfirst}
 \usepackage{pdfpages}
 \usepackage{graphicx}
@@ -21,7 +21,6 @@
 \usepackage{hyperref}
 \usepackage{dirtytalk,bm,physics}
 \usepackage{tikz}
-\usepackage{lipsum}
 \usepackage{fancyhdr}
 %footnote
 \pagestyle{fancy}
@@ -510,6 +509,142 @@ Khi ta đặt $\beta = \f{q_1 q_2}{4\pi\epsilon_0},\mu = 0$, thế Yukawa trở 
 \begin{align}
 	f(\theta) \approx  -\f{2m\beta}{\hbar^2} \f{q_1 q_2}{4\pi\epsilon_0}\f{1}{\kappa^2}
 \end{align}
+
+Bài tập xem thêm chương 10 Griffiths
+
+\chapter{Động lực học lượng tử}
+\section{Hệ 2 mức}
+Hai trạng thái của hệ (không nhiễu loạn), $\psi_a$ và $\psi_b$ là các trạng thái riêng của Hamiltonian không nhiễu loạn, $H^0$.
+\begin{align}
+	\hat{H}^0\psi_a = E_a\psi_a ,\quad \hat{H}^0\psi_b = E_b\psi_b.
+\end{align}\label{eq2.1}
+Các trạng thái riêng thỏa điều kiện trực - chuẩn:
+\begin{align}
+	\braket{\psi_a}{\psi_b} = \delta_{a,b}.
+\end{align}
+Bất kì trạng thái nào cũng có thể được biểu diễn dưới dạng tổ hợp tuyến tính của chúng:
+\begin{align}
+	\Psi(t = 0) = c_a\psi_a + c_b\psi_b,
+\end{align}
+tại thời điểm $t\neq0$
+\begin{align}
+	\Psi(t = t1) = c_a\psi_a e^{\frac{-i E_a t}{\hbar}} + c_b\psi_b e^{\frac{-i E_b t}{\hbar}} 
+\end{align}\label{eq2.4}
+
+\subsection{Hệ nhiễu loạn}
+\textbf{Nhiễu loạn phụ thuộc thời gian}\\
+
+Hamiltonian của hệ:
+\begin{align*}
+	H = H^{0} + H'(t) ; \quad t>0
+\end{align*}
+Hàm sóng được xây dựng như cách của hàm sóng ở phương trình \hyperref[eq2.4]{(2.4)}, nhưng các hệ số chuẩn hóa lúc này là các hàm phụ thuộc vào $t$:
+\begin{align}
+	\Psi(t = t1) = c_a(t)\psi_a e^{\frac{-i E_a t}{\hbar}} + c_b(t)\psi_b e^{\frac{-i E_b t}{\hbar}} 
+\end{align}
+Tại $t = 0$, hạt ở trạng thái $a: c_a(0) = 1; c_b(0) = 0$
+\begin{align}
+	i\hbar \f{\partial\psi}{\partial t} = H\psi \nonumber
+\end{align}
+\begin{align}
+	LHS &= i\hbar \left[\dot{c}_{a}(t)\psi_{a}  e^{\frac{-i E_a t}{\hbar}} + \cancel{c_a(t) \psi_{a}  e^{\frac{-i E_a t}{\hbar}} \left(-\f{i E_a}{\hbar}\right)} + \dot{c}_{b}(t)\psi_{b}  e^{\frac{-i E_b t}{\hbar}} + \Ccancel[red]{c_a(t) \psi_{a}  e^{\frac{-i E_a t}{\hbar}} \left(-\f{i E_a}{\hbar}\right)} \right] \nonumber\\
+	RHS &= \Ccancel{c_a \left(\hat{H}^0 \psi_a \right) e^{\frac{-i E_a t}{\hbar}}} + \Ccancel[red]{c_b \left(\hat{H}^0 \psi_b \right) e^{\frac{-i E_b t}{\hbar}}} + c_a \left(\hat{H}{'} \psi_a \right) e^{\frac{-i E_a t}{\hbar}} + c_b \left(\hat{H}{'} \psi_b \right) e^{\frac{-i E_b t}{\hbar}} \nonumber
+\end{align}
+Số hạng thứ 3 và 4 ở $LHS$ triệt tiêu với hai số hạng đầu ở $RHS$ bằng cách sử dụng công thức \hyperref[eq2.1]{(2.1)}
+\begin{align}
+	\Rightarrow & i\hbar \left[\dot{c}_{a}(t)\psi_{a}  e^{\frac{-i E_a t}{\hbar}} + \dot{c}_{b}(t)\psi_{b}  e^{\frac{-i E_b t}{\hbar}} \right] = c_a \left(\hat{H}{'} \psi_a \right) e^{\frac{-i E_a t}{\hbar}} + c_b \left(\hat{H}{'} \psi_b \right) e^{\frac{-i E_b t}{\hbar}}
+\end{align}
+
+\begin{align}
+	\begin{cases}
+		\dot{c}_a(t) &= \f{i}{\hbar} \left( H_{aa}' c_a +  H_{ab}' c_b e^{\frac{i}{\hbar} (E_a - E_b)t} \right),	\\
+		\dot{c}_b(t) &= \f{i}{\hbar} \left( H_{bb}' c_a +  H_{ba}' c_a e^{\frac{i}{\hbar} (E_b - E_a)t} \right).	\\
+	\end{cases}
+\end{align}
+Thông thường số hạng trên đường chéo bị triệt tiêu(Problem 11.5 Griffiths).
+\begin{align}
+	 H_{aa}' =  H_{bb}' = 0
+\end{align}
+\begin{align}
+	\begin{cases}
+		\dot{c}_a(t) &= \f{i}{\hbar}  H_{ab}' c_b e^{-\frac{i}{\hbar}\omega_0t },	\\
+		\dot{c}_b(t) &= \f{i}{\hbar}  H_{ba}' c_a e^{\frac{i}{\hbar} \omega_0t}.	\\
+	\end{cases}\label{eq2.9}
+\end{align}
+\textbf{Không nhiễu loạn (bậc 0)}
+\begin{align}
+	\begin{cases}
+		\dot{c}_a(t) &= 0 \rightarrow c_a^{0}(t) = 1, \\
+		\dot{c}_b(t) &= 0 \rightarrow c_b^{0}(t) = 0. \\
+	\end{cases}
+\end{align}
+\textbf{Nhiễu loạn bậc 1}
+Để tính nhiễu loạn bậc 1 ta lấy $c_a^{0}(t),c_b^{0}(t)$ thế vào \hyperref[eq2.9]{(2.9)}
+\begin{align}
+	\begin{cases}
+		\f{d c_{a}^{(1)}}{dt}=\dot{c}^{(1)}_a(t) = 0 \Rightarrow c^{(1)}_a(t) = 1 \\
+		\f{d c_{b}^{(1)}}{dt}= - \f{i}{\hbar}  H_{ba}' e^{i\omega_0 t} \Rightarrow c^{(1)}_{b}(t) = -\f{i}{\hbar} \dps\int_{0}^{t} H_{ba}' (t') e^{i\omega_0 t'} dt'   \\
+	\end{cases}
+\end{align}
+Bài tập:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
