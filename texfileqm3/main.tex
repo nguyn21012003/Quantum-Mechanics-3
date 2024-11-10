@@ -96,7 +96,7 @@ b$\downarrow$ thì $\theta\uparrow$  nên $\theta$ là hàm giảm
 \begin{align*}
 	d\Omega = \sin\theta d\theta d\phi
 \end{align*}
-\textbf{Tổng quát ( không có đối xứng trụ)}
+\textbf{Tổng quát (không có đối xứng trụ)}
 \begin{align*}
 	d\sigma = D(\theta)d\omega
 \end{align*}
@@ -120,27 +120,27 @@ $\ast$ số hạt trên 1 đơn vị diện tích
 \begin{align*}
 	dN = \mathcal{L}d\sigma
 \end{align*}
-trong đó $\mathcal{L}$ = số hạt / đơn vị diện tích / đơn vị thời gian $\Rightarrow$ $D\theta = \dfrac{dN}{\mathcal{L}d\Omega}$\\
+trong đó $\mathcal{L}$ = số hạt / đơn vị diện tích / đơn vị thời gian $\Rightarrow$ $D(\theta) = \dfrac{dN}{\mathcal{L}d\Omega}$\\
 \textbf{Trong lượng tử}
 \begin{align}
-	\psi = A \left[e^{i\mathbf{k}z} + f(\theta)\dfrac{e^{i\mathbf{kr}}}{\mathbf{r}}\right]
+	\psi = A \left[e^{ikz} + f(\theta)\dfrac{e^{ikr}}{r}\right]
 \end{align}
-trong đó $e^{i\mathbf{k}z}$ đại diện cho chùm tia tới, và $\dfrac{1}{\mathbf{r}}$ để đảm bảo bảo toàn xác suất.
+trong đó $e^{ikz}$ đại diện cho chùm tia tới, và $\dfrac{1}{r}$ để đảm bảo bảo toàn xác suất.
 
 $\ast$ z và r $\gg$ xa tâm tán xạ
 \begin{align*}
-	\abs{\psi}^2d\mathbf{V} = \abs{\psi}^2r^2d \mathbf{r} d\Omega
+	\abs{\psi}^2d{V} = \abs{\psi}^2r^2d {r} d\Omega
 \end{align*}
 
 $\ast$ Tán xạ đàn hồi\\
 Số hạt tới
 \begin{align*}
-	dP & = \abs{\psi_{in}}d\mathbf{V} \\
+	dP & = \abs{\psi_{in}}d{V} \\
 	   & = \abs{A}^2vdtd\sigma
 \end{align*}
 Số hạt tán xạ
 \begin{align*}
-	dP & = \abs{\psi_{scatter}}d\mathbf{V}            \\
+	dP & = \abs{\psi_{scatter}}d{V}                   \\
 	   & = \abs{A}^2\abs{f}^2\dfrac{1}{r^2}vdtd\Omega
 \end{align*}
 $\ast$t $\ll$
@@ -149,34 +149,34 @@ $\ast$t $\ll$
 	 & \Rightarrow \abs{f}^2 \equiv D(\theta)
 \end{align*}
 Mục tiêu của chúng ta vẫn là đi tìm $D(\theta)$ và biên độ tán xạ $f(\theta)$;điều này mô tả xác suất tán xạ được cho bởi theo hướng $\theta$. Ta đi giải phương trình Schr\"{o}dinger để đi tìm $f$ thông qua gần đúng Born hoặc gần đúng sóng riêng phần.\\
-Trong 2D: $\psi_{scatter} = f(\theta)\dfrac{e^{ik\mathbf{r}}}{\sqrt{\mathbf{r}}}$
+Trong 2D: $\psi_{scatter} = f(\theta)\dfrac{e^{ik{r}}}{\sqrt{{r}}}$
 \clearpage
 $\ast$ Tìm $f(\theta)$\\
 Thế năng hướng tâm (Radial potential)
 \begin{align*}
-	\psi(n\theta,\phi)             & =R(\mathbf{r})Y_{m\l}(\theta,\phi) \\
-	R(\mathbf{r})                  & =\dfrac{U(\mathbf{r})}{\mathbf{r}} \\
-	\mathbf{r} =0...\infty ;\theta & = 0...\pi;\phi = 0...2\pi
+	\psi(n\theta,\phi)      & =R({r})Y_{m\l}(\theta,\phi) \\
+	R({r})                  & =\dfrac{u({r})}{{r}}        \\
+	{r} =0...\infty ;\theta & = 0...\pi;\phi = 0...2\pi
 \end{align*}
 trong đó $Y_{ml}(\theta,\phi)$ là hàm điều hòa cầu.
 
 Phương trình Schr\"{o}dinger
 \begin{align*}
-	-\dfrac{\hbar}{2m}u'' + \left[V(\mathbf{r})+ \dfrac{\hbar}{2m}\dfrac{\l(\l+1)}{r^2}\right]u = Eu
+	-\dfrac{\hbar}{2m}u'' + \left[V({r})+ \dfrac{\hbar}{2m}\dfrac{\l(\l+1)}{r^2}\right]u = Eu
 \end{align*}
 \image{zone.png}
 $\ast$ Điều kiện biên (E>0)\\
 Vùng (3)
 \begin{align*}
-	            & u'' = -\dfrac{2mE}{\hbar^2}u = -k^2u                \\
-	\Rightarrow & u'' + k^2u =0                                       \\
-	\Rightarrow & u(\mathbf{r})=Ce^{i\mathbf{kr}} +De^{-i\mathbf{kr}}
+	            & u'' = -\dfrac{2mE}{\hbar^2}u = -k^2u \\
+	\Rightarrow & u'' + k^2u =0                        \\
+	\Rightarrow & u({r})=Ce^{i{kr}} +De^{-i{kr}}
 \end{align*}
-Do vùng (3) là vùng ở xa, nên hạt không bật lại $\Rightarrow D = 0 \Rightarrow u(\mathbf{r})=Ce^{i\mathbf{kr}}$.
+Do vùng (3) là vùng ở xa, nên hạt không bật lại $\Rightarrow D = 0 \Rightarrow u({r})=Ce^{i{kr}}$.
 
 Tại vùng r $\gg$,nên:
 \begin{align*}
-	R(r) \sim \frac{e^{i\mathbf{kr}}}{\mathbf{r}}
+	R(r) \sim \frac{e^{i{kr}}}{{r}}
 \end{align*}
 Vùng (2): vùng trung gian, $V=0$
 \begin{align*}
@@ -188,10 +188,10 @@ Khái niệm mới: Hàm Hankel cầu:
 \begin{align}
 	h_{\l}^{(1)}(r) \equiv j_{\l}(r) + in_{\l}(r); \quad h_{\l}^{(1)}(r) \equiv j_{\l}(r) - in_{\l}(r)
 \end{align}\label{eq1.3}
-với $r \gg$ thì 2 hàm trên tương đương với $\dfrac{e^{i\mathbf{kr}}}{r}$ và $\dfrac{e^{-i\mathbf{kr}}}{r}$. $R(r)\sim h_{\l}^{(1)}(kr)$\\
+với $r \gg$ thì 2 hàm trên tương đương với $\dfrac{e^{i{kr}}}{r}$ và $\dfrac{e^{-i{kr}}}{r}$. $R(r)\sim h_{\l}^{(1)}(kr)$\\
 $\ast$Vùng V = 0
 \begin{align*}
-	\psi(r,\theta,\phi) = A \left[e^{i\mathbf{kz}} + \sum_{l,m}C_{l,m} h_l^{(1)}(kr) Y_l^m(\theta,\phi)  \right]
+	\psi(r,\theta,\phi) = A \left[e^{i{kz}} + \sum_{l,m}C_{l,m} h_l^{(1)}(kr) Y_l^m(\theta,\phi)  \right]
 \end{align*}
 Số hạng thứ nhất là của sóng tới, và phần tổng chính là của sóng tán xạ. Nhưng khi chúng ta giả định rằng, thế năng là đối xứng cầu, nên hàm sóng không phụ thuộc vào $\phi$. Vậy nên chỉ còn số hạng $m=0$ là còn tồn tại.
 \begin{align*}
@@ -199,7 +199,7 @@ Số hạng thứ nhất là của sóng tới, và phần tổng chính là c�
 \end{align*}
 Vậy nên hàm sóng đơn giản thành:
 \begin{align*}
-	\psi(r,\theta)_{(2)} = A \left[e^{i\mathbf{kz}} + k\sum_{l=0}^{\infty}i^{\l+1}(2\l+1)a_{\l} h_{\l}^{(1)}(kr) P_{\l}(\cos\theta)\right]
+	\psi(r,\theta)_{(2)} = A \left[e^{i{kz}} + k\sum_{l=0}^{\infty}i^{\l+1}(2\l+1)a_{\l} h_{\l}^{(1)}(kr) P_{\l}(\cos\theta)\right]
 \end{align*}
 trong đó $a_l$ còn được gọi là biên độ sóng riêng phần thứ $\l$, kí hiệu $\psi(r,\theta)_{(2)}$ cho biết hàm sóng ở vùng số (2)
 
@@ -529,7 +529,7 @@ Chứng minh rằng:
 	G(\mathbf{r}) = \f{i}{8\pi^2 r} \left[ \left( i\pi e^{ikr} \right) - \left( -i\pi e^{ikr} \right) \right] = -\f{i\pi e^{ikr}}{4\pi r}.
 \end{align*}
 Giải:\\
-Xét VP
+Xét VT
 \begin{align*}
 	 & \left( \nabla^2\left(\f{i\pi e^{ikr}}{4\pi r}\right) + k^2 \f{i\pi e^{ikr}}{4\pi r}\right)                                                                              \\
 	 & =\left( \nabla^2\left(i\pi e^{ikr}\right)\f{1}{4\pi r} + \nabla^2\left(\f{1}{4\pi r}\right)i\pi e^{ikr} + k^2 \f{i\pi e^{ikr}}{4\pi r}\right) = \delta^{3}(\mathbf{r}).
@@ -582,6 +582,37 @@ Thay vào (2) ta được
 	 & =  \f{1}{\sqrt{\pi a^3}} e^{-r/a} = \psi(r) (DPCM)
 \end{align*}
 \subsubsection{Prob 10.10/p.395}
+Tìm biên độ tán xạ, sử dụng gần đúng Born, với quả cầu mềm tại năng lượng bất kì. Chứng minh rằng kết quả dẫn ra được phương trình (10.82) trong giới hạn năng lượng thấp.\\
+Giải:\\
+Ta có
+\begin{align*}
+	f(\theta) = -\f{m}{2\pi \hbar^2} \int V(\mathbf{r}) e^{i(\mathbf{k' - k})\cdot \mathbf{r}_0} d\mathbf{r}_0. \tag{1}
+\end{align*}
+với thế $V$ là
+\begin{align*}
+	V(\mathbf{r}) =
+	\begin{cases}
+		V_0 \quad (r \leq a), \\
+		0 \quad (r > a). \tag{2}
+	\end{cases}
+\end{align*}
+Từ (1) ta có
+\begin{align*}
+	f(\theta)
+	 & = -\f{2m}{\kappa\hbar^2} \int_{0}^{\infty} r V(r) sin \kappa r dr. \tag{3}
+\end{align*}
+Thay (2) vào (3) ta được
+\begin{align*}
+	f(\theta)
+	 & = -\f{2m V_0}{\kappa\hbar^2} \int_{0}^{a} r sin (\kappa r) dr \\
+	 & = -\f{2m V_0}{\kappa^3\hbar^2} \left[\sin \kappa a - \kappa a \cos \kappa a\right] \tag{4}
+\end{align*}
+với $\kappa = 2k\sin \f{\theta}{2}$.\\
+Ở năng lượng thấp, $ka \ll 1$ $\rightarrow$ khai triển Taylor cho $\sin \kappa a,\cos \kappa a$.
+\begin{align*}
+	f(\theta)
+	& = -\f{2m V_0}{\kappa^3\hbar^2} \left[ \kappa a - (\kappa a)^3 \f{1}{6} - (1 + (\kappa a)^2) \kappa a \right] = -\f{2}{3} \f{m V_0 a^3}{\hbar^2} (DPCM)
+\end{align*}
 
 \subsubsection{Prob 10.11/p.395}
 Tính tích phân sau
@@ -627,7 +658,7 @@ Cho
 		       & \approx -\f{m}{2\pi \hbar^2} \int e^{i\kappa r \cos\theta_{0}}V(r)r^{2}\sin\theta_{0}dr d\theta_{0} d\phi_{0}                                                           \\
 		       & \approx -\f{m}{2\pi \hbar^2} \int_{0}^{2\pi}d\phi_{0} \int_{0}^{\infty} r^{2} V(r) \left[\int_{0}^{\pi} e^{i\kappa r \cos\theta_{0}}sin\theta_{0} d\theta_{0}\right] dr \\
 		       & \approx -\f{m}{2\pi \hbar^2} 2\pi \int_{0}^{\infty} r^{2} V(r) \f{2\sin \kappa r}{\kappa r} dr                                                                          \\
-		       & \approx -\f{2m}{\kappa\hbar^2} \int_{0}^{\infty} r V(r) 2\sin \kappa r dr = -\f{2m\alpha}{\kappa\hbar^2} \int_{0}^{\infty} r \delta(r-a) dr
+		       & \approx -\f{2m}{\kappa\hbar^2} \int_{0}^{\infty} r V(r) 2sin \kappa r dr = -\f{2m\alpha}{\kappa\hbar^2} \int_{0}^{\infty} r \delta(r-a) dr
 	      \end{align*}
 	\item [(c)]
 \end{enumerate}
@@ -642,57 +673,113 @@ Hàm Green thỏa phương trình trên, bằng cách lấy biến đổi Fourie
 \end{align*}
 Thay vào VT của (1)
 \begin{align*}
-	\left( \f{d^2}{dx^2} + k^2 \right) G(x) 
-	&= \f{1}{\sqrt{2\pi}}\int \left[\left( \f{d^2}{dx^2} + k^2 \right)e^{isx}\right]g(s)ds \\
-	&= \f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds.
+	\left( \f{d^2}{dx^2} + k^2 \right) G(x)
+	 & = \f{1}{\sqrt{2\pi}}\int \left[\left( \f{d^2}{dx^2} + k^2 \right)e^{isx}\right]g(s)ds \\
+	 & = \f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds.
 \end{align*}
-VP của (1) 
+VP của (1)
 \begin{align*}
 	\delta(x) = \f{1}{2\pi} \int e^{isx} dx.
 \end{align*}
 Như vậy ta được
 \begin{align*}
-	&\f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds = \f{1}{2\pi}  \int e^{isx} dx \\
-	&\Rightarrow g(s) = \f{1}{\sqrt{2\pi} (k^2 - s^2)}.
+	 & \f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds = \f{1}{2\pi}  \int e^{isx} dx \\
+	 & \Rightarrow g(s) = \f{1}{\sqrt{2\pi} (k^2 - s^2)}.
 \end{align*}
-Hàm Green có dạng là 
+Hàm Green có dạng là
 \begin{align*}
 	G(x) = \f{1}{2\pi} \int \f{e^{isx}}{k^2 - s^2} ds.
 \end{align*}
 \begin{enumerate}
 	\item[(1)]
-	Khi $x>0$:
-	\begin{align*}
-		G(x) = -\f{1}{2\pi}\oint \left( \f{e^{isx}}{s+k} \right)\f{1}{s-k} dx = -\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s+k} \right) \at{s=k}{} = -i\f{e^{ikx}}{2k}.
-	\end{align*} 
+		Khi $x>0$:
+		\begin{align*}
+			G(x) = -\f{1}{2\pi}\oint \left( \f{e^{isx}}{s+k} \right)\f{1}{s-k} dx = -\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s+k} \right) \at{s=k}{} = -i\f{e^{ikx}}{2k}.
+		\end{align*}
 	\item[(2)]
-	Khi $x<0$:
-	\begin{align*}
-		G(x) = +\f{1}{2\pi}\oint \left( \f{e^{isx}}{s-k} \right)\f{1}{s+k} dx = +\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s-k} \right) \at{s=-k}{} = -i\f{e^{-ikx}}{2k}.
-	\end{align*} 
+		Khi $x<0$:
+		\begin{align*}
+			G(x) = +\f{1}{2\pi}\oint \left( \f{e^{isx}}{s-k} \right)\f{1}{s+k} dx = +\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s-k} \right) \at{s=-k}{} = -i\f{e^{-ikx}}{2k}.
+		\end{align*}
 \end{enumerate}
 Vậy nghiệm của hàm Green là
 \begin{align*}
 	G(x) = -\f{i}{2k} e^{ik\abs{x}}.
 \end{align*}
-Nghiệm riêng của phương trình Schr\"{o}dinger là 
+Nghiệm riêng của phương trình Schr\"{o}dinger là
 \begin{align*}
-	\psi(x)_{p} 
-	&= \int G(x - x_0) \mathcal{Q}(x_0) dx_0 \quad \quad (Eq 10.53) \\
-	&= -\int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0 
+	\psi(x)_{p}
+	 & = \int G(x - x_0) \mathcal{Q}(x_0) dx_0 \quad \quad (Eq 10.53) \\
+	 & = -\int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0
 \end{align*}
 với $\mathcal{Q}  = \f{2m}{\hbar^2}V(x_0) \psi(x_0)$.
-Nghiệm của của phương trình Schr\"{o}dinger sẽ là bằng nghiệm riêng cộng với nghiệm của phương trình Schr\"{o}dinger thuần nhất (ĐPCM) 
+Nghiệm của của phương trình Schr\"{o}dinger sẽ là bằng nghiệm riêng cộng với nghiệm của phương trình Schr\"{o}dinger thuần nhất (ĐPCM)
 \begin{align*}
-	\psi(x) 
-	&= \psi_0(x) - \int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0 
+	\psi(x)
+	 & = \psi_0(x) - \int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0 .
+\end{align*}
+\subsubsection{Prob 10.19/p.397}
+Giải:
+\begin{align*}
+	f(\theta) = \f{1}{k} \sum_{\l = 0}^{\infty} (2\l + 1) e^{i\delta_{\l}}\sin \delta_{\l} P_{\l}(\cos\theta),
+\end{align*}
+với $\theta =  0$, ta có
+\begin{align*}
+	f(0)
+	 & = \f{1}{k} \sum_{\l = 0}^{\infty} (2\l + 1) e^{i\delta_{\l}}\sin \delta_{\l} P_{\l}(1)              \\
+	 & = \f{1}{k} \sum_{\l = 0}^{\infty} (2\l + 1) e^{i\delta_{\l}}\sin \delta_{\l}                        \\
+	 & = \f{1}{k} \sum_{\l = 0}^{\infty} (2\l + 1) (\cos \delta_{\l} + i \sin \delta_{\l})\sin \delta_{\l}
+\end{align*}
+mà biên độ tán xạ
+\begin{align*}
+	\sigma
+	 & = \f{4\pi}{k^2} \sum_{\l = 0}^{\infty}(2\l + 1) \sin^{2}(\delta_{\l}) \\
+	 & = \f{4\pi}{k} \Im\left[f(0)\right]
 \end{align*}
 
-
 \section{Bài tập David Tong}
-\subsubsection{title}
-
-
+\subsubsection{Prob Set 1}
+\section*{Công thức lượng giác}
+\begin{enumerate}
+	\item[(a)]  Công thức cộng
+		\begin{align*}
+			 & \sin (a \pm b) = \sin a \cos b \pm \cos a \sin b            \\
+			 & \cos (a \pm b) = \cos a \cos b \mp \sin a \sin b            \\
+			 & \tan (a \pm b) = \f{\tan a \pm \tan b}{1 \mp \tan a \tan b}
+		\end{align*}
+	\item[(b)] Công thức nhân đôi
+		\begin{align*}
+			\sin 2a & = 2 \sin a \cos a                                     \\
+			\cos 2a & = \cos^2 a - \sin^2 a = 2 \cos^2 a - 1 = 1 - \sin^2 a \\
+			\tan 2a & = \f{2\tan a}{1 - \tan^2 a}
+		\end{align*}
+	\item[(c)] Công thức nhân ba
+		\begin{align*}
+			\sin 3a & = 3 \sin a - 4 \sin^3 a                 \\
+			\cos 3a & = 4 \cos^3 a - 3 \cos a                 \\
+			\tan 3a & = \f{3\tan a - \tan^3 a}{1 - 3\tan^2 a}
+		\end{align*}
+	\item[(d)] Công thức hạ bậc
+		\begin{align*}
+			\sin^2 a & = \f{1-\cos 2a}{2}        \\
+			\sin^3 a & = \f{3\sin a - \sin3a}{4} \\
+			\cos^2 a & = \f{1+\cos 2a}{2}        \\
+			\cos^3 a & = \f{3\sin a - \sin3a}{4} \\
+		\end{align*}
+	\item[(e)] Công thức tổng thành tích
+		\begin{align*}
+			\cos a + \cos b & = 2\cos(\f{a+b}{2})\cos(\f{a-b}{2})  \\
+			\cos a - \cos b & = -2\sin(\f{a+b}{2})\sin(\f{a-b}{2}) \\
+			\sin a + \sin b & = 2\sin(\f{a+b}{2})\cos(\f{a-b}{2})  \\
+			\sin a - \sin b & = 2\cos(\f{a+b}{2})\sin(\f{a-b}{2})  \\
+		\end{align*}
+	\item[(f)] Công thức tổng thành tích
+		\begin{align*}
+			\cos a \cos b & = \f{1}{2} \left[ \cos(a+b) + \cos(a-b) \right]  \\
+			\sin a \sin b & = -\f{1}{2} \left[ \cos(a+b) - \cos(a-b) \right] \\
+			\sin a \cos b & = \f{1}{2} \left[ \sin(a+b) + \sin(a-b) \right]
+		\end{align*}
+\end{enumerate}
 
 
 
