@@ -582,7 +582,7 @@ Thay vào (2) ta được
 	 & =  \f{1}{\sqrt{\pi a^3}} e^{-r/a} = \psi(r) (DPCM)
 \end{align*}
 \subsubsection{Prob 10.10/p.395}
-Để cho Khải Hoàn làm
+
 \subsubsection{Prob 10.11/p.395}
 Tính tích phân sau
 \begin{align*}
@@ -592,39 +592,105 @@ Ta có $\sin \kappa r = \f{e^{i\kappa r} - e^{-i\kappa r}}{2i}$, thay vào (1) t
 \begin{align*}
 	\int_{0}^{\infty} e^{-\mu r} \sin(\kappa r) dr
 	 & = \f{1}{2i}\int_{0}^{\infty} e^{(i\kappa - \mu) r} - e^{-(i\kappa + \mu) r} dr \\
-	 & = \f{1}{2i}\int_{0}^{\infty} e^{(i\kappa - \mu) r} - e^{-(i\kappa + \mu) r} dr \\
+	 & = \f{1}{2i}\int_{0}^{\infty} e^{(i\kappa - \mu) r} - e^{-(i\kappa + \mu) r} dr
 \end{align*}
-Để cho Khải Hoàn làm
+Tích phân bình thường
 
 \subsubsection{Prob 10.13/p.395}
-Cho 
+Cho
 \begin{align*}
 	V(r) = \alpha \delta(r-a)
 \end{align*}
 \begin{enumerate}
 	\item [(a)] Biên độ tán xạ $f(\theta)$ = ?, vi phân tiết diện tán xạ $D(\theta)$ = ?, và tiết diện tán xạ toàn phần $\sigma$ = ?, sử dụng gần đúng xấp xỉ Born với năng lượng thấp.\\
-Giải:
-\begin{align*}
-	f(\theta,\phi) 
-	&\approx -\f{m}{2\pi \hbar^2} \int e^{i(\mathbf{k' - k})\cdot \mathbf{r}_0} V(\mathbf{r}_0) d\mathbf{r}_0 \tag{1}\\
-	&\approx -\f{m}{2\pi \hbar^2} \int V(\mathbf{r}) d\mathbf{r}, \quad \quad (\text{năng lượng thấp}) \tag{2}
-\end{align*}
-Thay $V(r)$ vào (2) ta được
-\begin{align*}
-	f(\theta,\phi) 
-	&\approx  -\f{\alpha m}{2\pi \hbar^2} \int \delta(\mathbf{r} - a) d\mathbf{r} \\
-	&=  -\f{\alpha m}{2\pi \hbar^2} \int \delta(r - a)r^2 dr \int_{0}^{2\pi}d\phi \int_{0}^{\pi}\sin\theta d\theta \\
-	&=  -\f{\alpha m}{2\pi \hbar^2} 4\pi \int \delta(r - a)r^2 dr  \\
-	& = -\f{2\alpha m}{ \hbar^2} a^2
-\end{align*}
-\begin{align*}
-	D(\theta) = \abs{f}^2 ; \quad \quad \sigma = \int D(\theta)\sin\theta d\theta d\phi = 4\pi D
-\end{align*}
-	\item [(b)] Để Khải Hoàn tính tiếp
-	\item [(c)] 
+	      Giải:
+	      \begin{align*}
+		      f(\theta,\phi)
+		       & \approx -\f{m}{2\pi \hbar^2} \int e^{i(\mathbf{k' - k})\cdot \mathbf{r}_0} V(\mathbf{r}_0) d\mathbf{r}_0 \tag{1} \\
+		       & \approx -\f{m}{2\pi \hbar^2} \int V(\mathbf{r}) d\mathbf{r}, \quad \quad (\text{năng lượng thấp}) \tag{2}
+	      \end{align*}
+	      Thay $V(r)$ vào (2) ta được
+	      \begin{align*}
+		      f(\theta,\phi)
+		       & \approx  -\f{\alpha m}{2\pi \hbar^2} \int \delta(\mathbf{r} - a) d\mathbf{r}                                  \\
+		       & =  -\f{\alpha m}{2\pi \hbar^2} \int \delta(r - a)r^2 dr \int_{0}^{2\pi}d\phi \int_{0}^{\pi}\sin\theta d\theta \\
+		       & =  -\f{\alpha m}{2\pi \hbar^2} 4\pi \int \delta(r - a)r^2 dr                                                  \\
+		       & = -\f{2\alpha m}{ \hbar^2} a^2
+	      \end{align*}
+	      \begin{align*}
+		      D(\theta) = \abs{f}^2 ; \quad \quad \sigma = \int D(\theta)\sin\theta d\theta d\phi = 4\pi D
+	      \end{align*}
+	\item [(b)]
+	      \begin{align*}
+		      f(\theta,\phi)
+		       & \approx -\f{m}{2\pi \hbar^2} \int e^{i(\mathbf{k' - k})\cdot \mathbf{r}} V(\mathbf{r}) d\mathbf{r}                                                                      \\
+		       & \approx -\f{m}{2\pi \hbar^2} \int e^{i\kappa r \cos\theta_{0}}V(r)r^{2}\sin\theta_{0}dr d\theta_{0} d\phi_{0}                                                           \\
+		       & \approx -\f{m}{2\pi \hbar^2} \int_{0}^{2\pi}d\phi_{0} \int_{0}^{\infty} r^{2} V(r) \left[\int_{0}^{\pi} e^{i\kappa r \cos\theta_{0}}sin\theta_{0} d\theta_{0}\right] dr \\
+		       & \approx -\f{m}{2\pi \hbar^2} 2\pi \int_{0}^{\infty} r^{2} V(r) \f{2\sin \kappa r}{\kappa r} dr                                                                          \\
+		       & \approx -\f{2m}{\kappa\hbar^2} \int_{0}^{\infty} r V(r) 2\sin \kappa r dr = -\f{2m\alpha}{\kappa\hbar^2} \int_{0}^{\infty} r \delta(r-a) dr
+	      \end{align*}
+	\item [(c)]
 \end{enumerate}
 
+\subsubsection{Prob 10.16/p.397}
+\begin{align*}
+	\left( \f{d^2}{dx^2} + k^2 \right) G(x) = \delta(x).\tag{1}
+\end{align*}
+Hàm Green thỏa phương trình trên, bằng cách lấy biến đổi Fourier cho phương trình (1), ta được
+\begin{align*}
+	G(x) = \f{1}{\sqrt{2\pi}}\int e^{isx}g(s)ds.
+\end{align*}
+Thay vào VT của (1)
+\begin{align*}
+	\left( \f{d^2}{dx^2} + k^2 \right) G(x) 
+	&= \f{1}{\sqrt{2\pi}}\int \left[\left( \f{d^2}{dx^2} + k^2 \right)e^{isx}\right]g(s)ds \\
+	&= \f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds.
+\end{align*}
+VP của (1) 
+\begin{align*}
+	\delta(x) = \f{1}{2\pi} \int e^{isx} dx.
+\end{align*}
+Như vậy ta được
+\begin{align*}
+	&\f{1}{\sqrt{2\pi}} \int \left(-s^2 + k^2\right) e^{isr} g(s) ds = \f{1}{2\pi}  \int e^{isx} dx \\
+	&\Rightarrow g(s) = \f{1}{\sqrt{2\pi} (k^2 - s^2)}.
+\end{align*}
+Hàm Green có dạng là 
+\begin{align*}
+	G(x) = \f{1}{2\pi} \int \f{e^{isx}}{k^2 - s^2} ds.
+\end{align*}
+\begin{enumerate}
+	\item[(1)]
+	Khi $x>0$:
+	\begin{align*}
+		G(x) = -\f{1}{2\pi}\oint \left( \f{e^{isx}}{s+k} \right)\f{1}{s-k} dx = -\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s+k} \right) \at{s=k}{} = -i\f{e^{ikx}}{2k}.
+	\end{align*} 
+	\item[(2)]
+	Khi $x<0$:
+	\begin{align*}
+		G(x) = +\f{1}{2\pi}\oint \left( \f{e^{isx}}{s-k} \right)\f{1}{s+k} dx = +\f{1}{2\pi} 2\pi i \left( \f{e^{isx}}{s-k} \right) \at{s=-k}{} = -i\f{e^{-ikx}}{2k}.
+	\end{align*} 
+\end{enumerate}
+Vậy nghiệm của hàm Green là
+\begin{align*}
+	G(x) = -\f{i}{2k} e^{ik\abs{x}}.
+\end{align*}
+Nghiệm riêng của phương trình Schr\"{o}dinger là 
+\begin{align*}
+	\psi(x)_{p} 
+	&= \int G(x - x_0) \mathcal{Q}(x_0) dx_0 \quad \quad (Eq 10.53) \\
+	&= -\int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0 
+\end{align*}
+với $\mathcal{Q}  = \f{2m}{\hbar^2}V(x_0) \psi(x_0)$.
+Nghiệm của của phương trình Schr\"{o}dinger sẽ là bằng nghiệm riêng cộng với nghiệm của phương trình Schr\"{o}dinger thuần nhất (ĐPCM) 
+\begin{align*}
+	\psi(x) 
+	&= \psi_0(x) - \int \f{i}{2k} e^{ik\abs{x-x_0}} \mathcal{Q}(x_0) dx_0 
+\end{align*}
 
+
+\section{Bài tập David Tong}
+\subsubsection{title}
 
 
 
