@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize,fontsize}
+\changefontsize[13pt]{13pt}	
+\usepackage{commath}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme}
+\usepackage[thinc]{esdiff}
+\usepackage{hyperref}
+\usepackage{bm,physics}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[L]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{4cm} \thepage}%
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+\newcommand{\image}[1]{
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{pic/#1}
+	\end{center}
+}
+\renewcommand{\l}{\ell}
+\newcommand{\dps}{\displaystyle}
+
+\newcommand{\f}[2]{\dfrac{#1}{#2}}
+\newcommand{\at}[2]{\bigg\rvert_{#1}^{#2} }
+
+
+\renewcommand{\baselinestretch}{2.0}
+
+
+\title{\Huge{Cơ học lượng tử 3}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={QM3},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+\subsection*{Bài 1}
+Giả sử một hệ có cơ sở chỉ gồm hai trạng thái trực chuẩn $\ket{1}$ và $\ket{2}$, ứng với Hamiltonian toàn phần có biểu diễn ma trận là 
+\begin{align*}
+	\begin{pmatrix}
+		E_{1} & V_{0} e^{i\omega t} \\
+		V_{0} e^{- i\omega t}  & E_{2}  \\
+	\end{pmatrix}
+\end{align*}
+trong đó $V_{0}$ là độc lập với thời gian. Ở thời điểm $t = 0$, hệ nằm trong trạng thái $\ket{1}$.\\
+\begin{enumerate}
+	\item[(a)] Chứng tỏ rằng xác suất chuyển dời từ trạng thái $\ket{1}$ sang trạng thái $\ket{2}$ trong khoảng thời gian $t$ bằng
+	\begin{align*}
+		P(t) = \f{4V_{0}^{2}}{(E_{1} - E_{2} + \hbar \omega)^2} \sin^2 \left( \f{(E_{1} - E_{2} + \hbar \omega)}{2\hbar} \right) + O(V^4)
+	\end{align*}
+	tới bậc thấp nhất khác không theo $V_0$.
+	\item [(b)] Hãy giải bài toán hai trạng thái này một cách chính xác để tìm giá trị thực của $P(t)$ và do đó phát biểu các điều kiện cần để cách tiếp cận nhiễu loạn hợp lệ ở đây.
+\end{enumerate}
+Giải:\\
+\begin{enumerate}
+	\item[(a)] Ta có 
+	\begin{align*}
+		H'_{11} = H'_{22} = 0 \tag{1}
+	\end{align*}
+	Ta khai triển hàm sóng dưới dạng tổ hợp tuyến tính của $\ket{1}$ và $\ket{2}$
+	\begin{align*}
+		\Psi(t) = c_{1} \ket{1} e^{-iE_{1} t / \hbar} + c_{2} \ket{2} e^{-iE_{2} t / \hbar} \tag{2}
+	\end{align*}
+	trong đó
+	\begin{align*}
+		\dot{c}_{1} &= -\f{i}{\hbar} \left[ c_{1} H'_{11} + c_{2} H'_{12} e^{-i(E_2 - E_1) t / \hbar} \right] \tag{3}\\
+		\dot{c}_{2} &= -\f{i}{\hbar} \left[ c_{2} H'_{22} + c_{1} H'_{21} e^{-i(E_1 - E_2) t / \hbar} \right] \tag{4}
+	\end{align*}
+	Đặt $\omega_{12} = \f{E_{a} - E_{b}}{\hbar} = - \omega_{21}$
+	Điều kiện đầu
+	\begin{align*}
+		\text{Tại} \; t = 0
+		\begin{cases}
+			c_{1}(0) = 1 \equiv c_{1}^{(0)}(t) = 1 \\
+			c_{2}(0) = 0 \equiv c_{2}^{(0)}(t) = 0 
+		\end{cases} \tag{5}
+	\end{align*}
+	Ta thay vào (3) và (4), được
+	\begin{align*}
+		\f{d c_{1}^{(1)}}{dt} = 0 &\Rightarrow c_{1}^{(1)}(t) = 1; \\
+		\f{d c_{2}^{(1)}}{dt} = -\f{i}{\hbar}H'_{21} e^{i\omega_{21} t} &\Rightarrow c_{2}^{(1)} = - \f{i}{\hbar} \int_{0}^{t} V_{0}e^{-i\omega t'} e^{i\omega_{21} t'} dt' 
+	\end{align*}
+	\begin{align*}
+		\Rightarrow c_{b}^{(1)} 
+		&= -\f{i V_{0}}{\hbar i (\omega_{21} - \omega)} \left[e^{i(\omega_{21} - \omega) t} - 1\right]\\
+		&= \f{V_{0}}{\hbar (\omega - \omega_{21})} \left[e^{i(\omega_{21} - \omega) t} - 1\right] \tag{6}
+	\end{align*}
+	Xác suất chuyển dời từ $\ket{1} \rightarrow \ket{2}$
+	\begin{align*}
+		P_{12}(t) 
+		&= \abs{c_{2}^{(1)}(t)}^2\\
+		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[(e^{i(\omega_{21} - \omega) t} - 1)(e^{-i(\omega_{21} - \omega) t} - 1)\right]\\
+		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[1 - e^{-i(\omega_{21} - \omega) t} -e^{i(\omega_{21} - \omega) t} + 1 \right] \\
+		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[2 - 2\cos((\omega_{21} - \omega_{12})t)\right] \\
+		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{\omega_{21} - \omega}{2}t \right) \\
+		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{E_{1} - E_{2} + \hbar\omega}{2\hbar}t \right) (DPCM)
+	\end{align*}
+	\item [(b)]
+
+\end{enumerate}
+ 	
+	
+\end{document}
