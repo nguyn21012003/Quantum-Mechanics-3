@@ -70,112 +70,112 @@
 \author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
 \maketitle
 \subsection*{Bài 1}
-Giả sử một hệ có cơ sở chỉ gồm hai trạng thái trực chuẩn $\ket{1}$ và $\ket{2}$, ứng với Hamiltonian toàn phần có biểu diễn ma trận là 
+Giả sử một hệ có cơ sở chỉ gồm hai trạng thái trực chuẩn $\ket{1}$ và $\ket{2}$, ứng với Hamiltonian toàn phần có biểu diễn ma trận là
 \begin{align*}
 	\begin{pmatrix}
-		E_{1} & V_{0} e^{i\omega t} \\
-		V_{0} e^{- i\omega t}  & E_{2}  \\
+		E_{1}                 & V_{0} e^{i\omega t} \\
+		V_{0} e^{- i\omega t} & E_{2}               \\
 	\end{pmatrix}
 \end{align*}
 trong đó $V_{0}$ là độc lập với thời gian. Ở thời điểm $t = 0$, hệ nằm trong trạng thái $\ket{1}$.
 \begin{enumerate}
 	\item[(a)] Chứng tỏ rằng xác suất chuyển dời từ trạng thái $\ket{1}$ sang trạng thái $\ket{2}$ trong khoảng thời gian $t$ bằng
-	\begin{align*}
-		P(t) = \f{4V_{0}^{2}}{(E_{1} - E_{2} + \hbar \omega)^2} \sin^2 \left( \f{(E_{1} - E_{2} + \hbar \omega)}{2\hbar} \right) + O(V^4)
-	\end{align*}
-	tới bậc thấp nhất khác không theo $V_0$.
+	      \begin{align*}
+		      P(t) = \f{4V_{0}^{2}}{(E_{1} - E_{2} + \hbar \omega)^2} \sin^2 \left( \f{(E_{1} - E_{2} + \hbar \omega)}{2\hbar} \right) + O(V^4)
+	      \end{align*}
+	      tới bậc thấp nhất khác không theo $V_0$.
 	\item [(b)] Hãy giải bài toán hai trạng thái này một cách chính xác để tìm giá trị thực của $P(t)$ và do đó phát biểu các điều kiện cần để cách tiếp cận nhiễu loạn hợp lệ ở đây.
 \end{enumerate}
 Giải:\\
 \begin{enumerate}
-	\item[(a)] Ta có 
-	\begin{align*}
-		H'_{11} = H'_{22} = 0 \tag{1}
-	\end{align*}
-	Ta khai triển hàm sóng dưới dạng tổ hợp tuyến tính của $\ket{1}$ và $\ket{2}$
-	\begin{align*}
-		\Psi(t) = c_{1} \ket{1} e^{-iE_{1} t / \hbar} + c_{2} \ket{2} e^{-iE_{2} t / \hbar} \tag{2}
-	\end{align*}
-	trong đó
-	\begin{align*}
-		\dot{c}_{1} &= -\f{i}{\hbar} \left[ c_{1} H'_{11} + c_{2} H'_{12} e^{-i(E_2 - E_1) t / \hbar} \right] \tag{3}\\
-		\dot{c}_{2} &= -\f{i}{\hbar} \left[ c_{2} H'_{22} + c_{1} H'_{21} e^{-i(E_1 - E_2) t / \hbar} \right] \tag{4}
-	\end{align*}
-	Đặt $\omega_{12} = \f{E_{1} - E_{2}}{\hbar} = - \omega_{21}$.\\
-	Điều kiện đầu
-	\begin{align*}
-		\text{Tại} \; t = 0
-		\begin{cases}
-			c_{1}(0) = 1 \equiv c_{1}^{(0)}(t) = 1 \\
-			c_{2}(0) = 0 \equiv c_{2}^{(0)}(t) = 0 
-		\end{cases} \tag{5}
-	\end{align*}
-	Ta thay vào (3) và (4), được
-	\begin{align*}
-		\f{d c_{1}^{(1)}}{dt} = 0 &\Rightarrow c_{1}^{(1)}(t) = 1; \\
-		\f{d c_{2}^{(1)}}{dt} = -\f{i}{\hbar}H'_{21} e^{i\omega_{21} t} &\Rightarrow c_{2}^{(1)} = - \f{i}{\hbar} \int_{0}^{t} V_{0}e^{-i\omega t'} e^{i\omega_{21} t'} dt' 
-	\end{align*}
-	\begin{align*}
-		\Rightarrow c_{2}^{(1)} 
-		&= -\f{i V_{0}}{\hbar i (\omega_{21} - \omega)} \left[e^{i(\omega_{21} - \omega) t} - 1\right]\\
-		&= \f{V_{0}}{\hbar (\omega - \omega_{21})} \left[e^{i(\omega_{21} - \omega) t} - 1\right] \tag{6}
-	\end{align*}
-	Xác suất chuyển dời từ $\ket{1} \rightarrow \ket{2}$
-	\begin{align*}
-		P_{12}(t) 
-		&= \abs{c_{2}^{(1)}(t)}^2\\
-		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[(e^{i(\omega_{21} - \omega) t} - 1)(e^{-i(\omega_{21} - \omega) t} - 1)\right]\\
-		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[1 - e^{-i(\omega_{21} - \omega) t} -e^{i(\omega_{21} - \omega) t} + 1 \right] \\
-		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[2 - 2\cos((\omega_{21} - \omega)t)\right] \\
-		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{\omega_{21} - \omega}{2}t \right) \\
-		&= \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{E_{1} - E_{2} + \hbar\omega}{2\hbar}t \right) (DPCM)
-	\end{align*}
+	\item[(a)] Ta có
+	      \begin{align*}
+		      H'_{11} = H'_{22} = 0 \tag{1}
+	      \end{align*}
+	      Ta khai triển hàm sóng dưới dạng tổ hợp tuyến tính của $\ket{1}$ và $\ket{2}$
+	      \begin{align*}
+		      \Psi(t) = c_{1} \ket{1} e^{-iE_{1} t / \hbar} + c_{2} \ket{2} e^{-iE_{2} t / \hbar} \tag{2}
+	      \end{align*}
+	      trong đó
+	      \begin{align*}
+		      \dot{c}_{1} & = -\f{i}{\hbar} \left[ c_{1} H'_{11} + c_{2} H'_{12} e^{-i(E_2 - E_1) t / \hbar} \right] \tag{3} \\
+		      \dot{c}_{2} & = -\f{i}{\hbar} \left[ c_{2} H'_{22} + c_{1} H'_{21} e^{-i(E_1 - E_2) t / \hbar} \right] \tag{4}
+	      \end{align*}
+	      Đặt $\omega_{12} = \f{E_{1} - E_{2}}{\hbar} = - \omega_{21}$.\\
+	      Điều kiện đầu
+	      \begin{align*}
+		      \text{Tại} \; t = 0
+		      \begin{cases}
+			      c_{1}(0) = 1 \equiv c_{1}^{(0)}(t) = 1 \\
+			      c_{2}(0) = 0 \equiv c_{2}^{(0)}(t) = 0
+		      \end{cases} \tag{5}
+	      \end{align*}
+	      Ta thay vào (3) và (4), được
+	      \begin{align*}
+		      \f{d c_{1}^{(1)}}{dt} = 0                                       & \Rightarrow c_{1}^{(1)}(t) = 1;                                                                    \\
+		      \f{d c_{2}^{(1)}}{dt} = -\f{i}{\hbar}H'_{21} e^{i\omega_{21} t} & \Rightarrow c_{2}^{(1)} = - \f{i}{\hbar} \int_{0}^{t} V_{0}e^{-i\omega t'} e^{i\omega_{21} t'} dt'
+	      \end{align*}
+	      \begin{align*}
+		      \Rightarrow c_{2}^{(1)}
+		       & = -\f{i V_{0}}{\hbar i (\omega_{21} - \omega)} \left[e^{i(\omega_{21} - \omega) t} - 1\right]    \\
+		       & = \f{V_{0}}{\hbar (\omega - \omega_{21})} \left[e^{i(\omega_{21} - \omega) t} - 1\right] \tag{6}
+	      \end{align*}
+	      Xác suất chuyển dời từ $\ket{1} \rightarrow \ket{2}$
+	      \begin{align*}
+		      P_{12}(t)
+		       & = \abs{c_{2}^{(1)}(t)}^2                                                                                                             \\
+		       & = \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[(e^{i(\omega_{21} - \omega) t} - 1)(e^{-i(\omega_{21} - \omega) t} - 1)\right] \\
+		       & = \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[1 - e^{-i(\omega_{21} - \omega) t} -e^{i(\omega_{21} - \omega) t} + 1 \right]  \\
+		       & = \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} \left[2 - 2\cos((\omega_{21} - \omega)t)\right]                                      \\
+		       & = \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{\omega_{21} - \omega}{2}t \right)                                  \\
+		       & = \f{V_{0}^2}{(E_{1} - E_{2} + \hbar \omega)^2} 4 \sin^2\left( \f{E_{1} - E_{2} + \hbar\omega}{2\hbar}t \right) (DPCM)
+	      \end{align*}
 	\item [(b)] Từ phương trình (3) và (4), ta lấy đạo hàm theo $t$ một lần nữa cho phương trình (4), dẫn đến
-	\begin{align*}
-		\ddot{c}_{2} 
-		&= - \f{i}{\hbar} \dot{c}_{1}V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar} + \f{i}{\hbar}\f{i(E_{1} - E_{2} - \omega)}{\hbar} c_{1} V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar} \\
-		&= - \f{1}{\hbar^2} \left[ c_{2} H'_{12} e^{-i(E_2 - E_1 - \omega) t / \hbar} \right]H'_{21} e^{-i(E_1 - E_2 + \omega) t / \hbar} - \f{(E_{1} - E_{2} - \omega)}{\hbar^2} c_{1} V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar} \\
-		&= - \f{1}{\hbar^2} c_{2} V_{0}^2  - \f{i(E_{1} - E_{2})}{\hbar}\f{\hbar}{-i H'_{21}}e^{i(E_1 - E_2) t / \hbar} H'_{21} e^{-i(E_1 - E_2) t / \hbar} \dot{c}_{2} \\
-		&= -c_{2} \left(\f{V_{0}}{\hbar}\right)^2 - i (\omega_{21} - \omega)\dot{c}_{2}
-	\end{align*}
-	\begin{align*}
-		\Rightarrow \ddot{c}_{2} + i(\omega_{21} - \omega)\dot{c}_{2} + \f{V_{0}^2}{\hbar^2}c_{2} = 0 \tag{6}
-	\end{align*}
-	Đặt $c_{2} = e^{mt}$, nên (6) trở thành
-	\begin{align*}
-		m^{2} e^{mt} + m e^{mt} i(\omega_{21} - \omega) +  \f{V_{0}^2}{\hbar^2} e^{mt} = 0 ,
-	\end{align*}
-	với $\Delta <0 $\\
-	Điều kiện đầu
-	\begin{align*}
-		\begin{cases}
-			c_{1}(0) = 1 \\
-			c_{2}(0) = 2
-		\end{cases}
-	\end{align*}
-	\begin{align*}
-		\Rightarrow 
-		&c_{2}(t) = \exp(i \f{\omega_{21} - \omega }{2} t) A \sin\left(\f{\Omega}{2}t\right)\\
-		&\dot{c}_{2}(t) = i \f{\omega_{21} - \omega}{2}\exp\left(i \f{\omega_{21} - \omega}{2}t\right)A \sin\left(\f{\Omega}{2}t\right) + \exp\left(i \f{\omega_{21} - \omega}{2}t\right)A\f{\Omega}{2} \cos\left(\f{\Omega}{2}t\right)
-	\end{align*}
-	\begin{align*}
-		c_{1} (t)
-		&= \f{i\hbar}{V_{0}}\dot{c}_{2} \exp(i\omega t)\exp(i \omega_{12} t)\\
-		&= \f{i\hbar}{V_{0}}i \f{\omega_{21} - \omega}{2} \exp\left(i \f{\omega - \omega_{12}}{2}t\right) A\sin\left(\f{\Omega}{2}t\right) + \exp\left(i \f{\omega - \omega_{12}}{2}t\right) A\f{\Omega}{2}\cos\left(\f{\Omega}{2} t\right)
-	\end{align*}
-	Áp dụng điều kiện đầu
-	\begin{align*}
-		c_{1}(0)
-		&= A\f{\Omega}{2}\cos(0) = 1 \Rightarrow A = \f{2}{\Omega}.
-	\end{align*}
-	Xác suất chuyển dời từ trạng thái $\ket{1} \rightarrow \ket{2}$.
-	\begin{align*}
-		P_{12}(t)
-		& = \abs{c_{2}(t)}^2\\
-		&= \left(\f{2}{\Omega} \sin\left(\f{\Omega}{2}t\right) \right)^2
-	\end{align*}
+	      \begin{align*}
+		      \ddot{c}_{2}
+		       & = - \f{i}{\hbar} \dot{c}_{1}V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar} + \f{i}{\hbar}\f{i(E_{1} - E_{2} - \omega)}{\hbar} c_{1} V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar}                                                \\
+		       & = - \f{1}{\hbar^2} \left[ c_{2} H'_{12} e^{-i(E_2 - E_1 - \omega) t / \hbar} \right]H'_{21} e^{-i(E_1 - E_2 + \omega) t / \hbar} - \f{(E_{1} - E_{2} - \omega)}{\hbar^2} c_{1} V_{0} e^{-i(E_1 - E_2 - \omega) t / \hbar} \\
+		       & = - \f{1}{\hbar^2} c_{2} V_{0}^2  - \f{i(E_{1} - E_{2})}{\hbar}\f{\hbar}{-i H'_{21}}e^{i(E_1 - E_2) t / \hbar} H'_{21} e^{-i(E_1 - E_2) t / \hbar} \dot{c}_{2}                                                            \\
+		       & = -c_{2} \left(\f{V_{0}}{\hbar}\right)^2 - i (\omega_{21} - \omega)\dot{c}_{2}
+	      \end{align*}
+	      \begin{align*}
+		      \Rightarrow \ddot{c}_{2} + i(\omega_{21} - \omega)\dot{c}_{2} + \f{V_{0}^2}{\hbar^2}c_{2} = 0 \tag{6}
+	      \end{align*}
+	      Đặt $c_{2} = e^{mt}$, nên (6) trở thành
+	      \begin{align*}
+		      m^{2} e^{mt} + m e^{mt} i(\omega_{21} - \omega) +  \f{V_{0}^2}{\hbar^2} e^{mt} = 0 ,
+	      \end{align*}
+	      với $\Delta <0 $\\
+	      Điều kiện đầu
+	      \begin{align*}
+		      \begin{cases}
+			      c_{1}(0) = 1 \\
+			      c_{2}(0) = 2
+		      \end{cases}
+	      \end{align*}
+	      \begin{align*}
+		      \Rightarrow
+		       & c_{2}(t) = \exp(i \f{\omega_{21} - \omega }{2} t) A \sin\left(\f{\Omega}{2}t\right)                                                                                                                                            \\
+		       & \dot{c}_{2}(t) = i \f{\omega_{21} - \omega}{2}\exp\left(i \f{\omega_{21} - \omega}{2}t\right)A \sin\left(\f{\Omega}{2}t\right) + \exp\left(i \f{\omega_{21} - \omega}{2}t\right)A\f{\Omega}{2} \cos\left(\f{\Omega}{2}t\right)
+	      \end{align*}
+	      \begin{align*}
+		      c_{1} (t)
+		       & = \f{i\hbar}{V_{0}}\dot{c}_{2} \exp(i\omega t)\exp(i \omega_{12} t)                                                                                                                                                                \\
+		       & = \f{i\hbar}{V_{0}}i \f{\omega_{21} - \omega}{2} \exp\left(i \f{\omega - \omega_{12}}{2}t\right) A\sin\left(\f{\Omega}{2}t\right) + \exp\left(i \f{\omega - \omega_{12}}{2}t\right) A\f{\Omega}{2}\cos\left(\f{\Omega}{2} t\right)
+	      \end{align*}
+	      Áp dụng điều kiện đầu
+	      \begin{align*}
+		      c_{1}(0)
+		       & = A\f{\Omega}{2}\cos(0) = 1 \Rightarrow A = \f{2}{\Omega}.
+	      \end{align*}
+	      Xác suất chuyển dời từ trạng thái $\ket{1} \rightarrow \ket{2}$.
+	      \begin{align*}
+		      P_{12}(t)
+		       & = \abs{c_{2}(t)}^2                                              \\
+		       & = \left(\f{2}{\Omega} \sin\left(\f{\Omega}{2}t\right) \right)^2
+	      \end{align*}
 
 \end{enumerate}
- 	
-	
+
+
 \end{document}
